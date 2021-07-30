@@ -20,14 +20,14 @@ const RopstenFaucetEthDimensionsNetwork: Faucet = {
 }
 
 const KovanFaucetEthParity: Faucet = {
-  url: 'https://gitter.im/kovan-testnet/faucet',
+  url: 'https://faucet.kovan.network/',
   maintainer: 'Parity',
   maintainerWebsite: 'https://kovan-testnet.github.io/website/'
 }
 
 const KovanFaucetEthParityGitter: Faucet = {
   url: 'https://gitter.im/kovan-testnet/faucet',
-  maintainer: 'Parity',
+  maintainer: 'Gitter',
   maintainerWebsite: 'https://kovan-testnet.github.io/website/'
 }
 
