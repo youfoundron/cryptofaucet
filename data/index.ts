@@ -2,12 +2,13 @@ import { Chain } from '../domain/Chain'
 import { AnyData } from '../domain/Data';
 import { Network } from '../domain/Network';
 import { Token } from '../domain/Token';
-import { Ethereum, POA, Zcash } from './chains';
+import { Celo, Ethereum, POA, Zcash } from './chains';
 
 export const chains: Chain[] = [
+  Celo,
   Ethereum,
   POA,
-  Zcash
+  Zcash,
 ]
 
 export const networks: Network[] = chains.reduce<Network[]>((_networks, chain) =>

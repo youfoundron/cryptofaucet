@@ -1,4 +1,7 @@
 import { Network } from '../domain/Network'
+import { CeloToken } from './tokens/celo'
+import { CeloEuroToken } from './tokens/ceur'
+import { CeloDollarToken } from './tokens/cusd'
 import { KovanTokenEth, RinkebyTokenEth, RopstenTokenEth } from './tokens/ether'
 import { KovanTokenChainlink, RinkebyTokenChainlink, RopstenTokenChainlink } from './tokens/link'
 import { SokolPOA } from './tokens/poa'
@@ -59,5 +62,18 @@ export const ZcashTestnet: Network = {
   blockExplorer: 'https://sochain.com/testnet/zcash',
   tokens: [
     TestnetZEC
+  ]
+}
+
+export const Alphajores: Network = {
+  type: 'network',
+  id: 'celo-alphajores',
+  title: 'Alphajores',
+  description: 'The Alfajores Testnet is a Celo test network for developers building on the Celo platform.',
+  blockExplorer: 'https://alfajores-blockscout.celo-testnet.org',
+  tokens: [
+    CeloToken,
+    CeloDollarToken,
+    CeloEuroToken,
   ]
 }
