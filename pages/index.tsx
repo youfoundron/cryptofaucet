@@ -11,6 +11,7 @@ import { NetworkResultCard } from "../components/NetworkResultCard";
 import { Chain } from "../domain/Chain";
 import { Network } from "../domain/Network";
 import { Token } from "../domain/Token";
+import { GithubCorner } from "../components/GithubCorner";
 
 const fuse = new Fuse(all, { keys: ["title", "id", "aggregateId"] });
 
@@ -33,6 +34,7 @@ const HomePage: React.FC = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <GithubCorner />
       {showBanner && (
         <div className="relative bg-indigo-600">
           <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
