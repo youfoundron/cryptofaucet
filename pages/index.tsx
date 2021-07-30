@@ -38,7 +38,9 @@ const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
             <div className="pr-16 sm:text-center sm:px-16">
               <p className="font-medium text-white">
-                <span className="md:hidden">We announced a new product!</span>
+                <span className="md:hidden">
+                  {`Can't find what you're looking for?`}
+                </span>
                 <span className="hidden md:inline">
                   {`Can't find what you're looking for? Tell us what you need.`}
                 </span>
