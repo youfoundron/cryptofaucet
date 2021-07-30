@@ -70,7 +70,9 @@ const HomePage: React.FC = () => {
 
       <main className="flex justify-center flex-1 pt-6">
         <section className="container flex flex-col space-y-6">
-          <h2 className="text-center font-black text-6xl">Find a faucet!</h2>
+          <h2 className="text-center font-black text-5xl sm:text-6xl">
+            Find a faucet!
+          </h2>
 
           <form className="w-full max-w-md mx-auto">
             <input
