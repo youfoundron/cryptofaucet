@@ -2,9 +2,10 @@ import { Chain } from '../domain/Chain'
 import { AnyData } from '../domain/Data';
 import { Network } from '../domain/Network';
 import { Token } from '../domain/Token';
-import { Celo, Ethereum, POA, Zcash } from './chains';
+import { Bitcoin, Celo, Ethereum, POA, Zcash } from './chains';
 
 export const chains: Chain[] = [
+  Bitcoin,
   Celo,
   Ethereum,
   POA,

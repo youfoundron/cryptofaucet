@@ -1,5 +1,5 @@
 import { Chain } from "../domain/Chain"
-import { Ropsten, Rinkeby, Kovan, Sokol, ZcashTestnet, Alphajores } from "./networks"
+import { Ropsten, Rinkeby, Kovan, Sokol, ZcashTestnet, Alphajores, BitcoinTestnet } from "./networks"
 
 export const Ethereum: Chain = {
   type: 'chain',
@@ -44,5 +44,16 @@ export const Celo: Chain = {
   documentationWebsite: 'https://docs.celo.org/',
   networks: [
     Alphajores
+  ]
+}
+
+export const Bitcoin: Chain = {
+  type: 'chain',
+  id: 'bitcoin',
+  title: 'Bitcoin',
+  description: 'Bitcoin is an innovative payment network and a new kind of money.',
+  documentationWebsite: 'https://developer.bitcoin.org/reference/',
+  networks: [
+    BitcoinTestnet
   ]
 }

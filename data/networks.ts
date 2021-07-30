@@ -1,4 +1,5 @@
 import { Network } from '../domain/Network'
+import { TestnetBitcoin } from './tokens/bitcoin'
 import { CeloToken } from './tokens/celo'
 import { CeloEuroToken } from './tokens/ceur'
 import { CeloDollarToken } from './tokens/cusd'
@@ -75,5 +76,16 @@ export const Alphajores: Network = {
     CeloToken,
     CeloDollarToken,
     CeloEuroToken,
+  ]
+}
+
+export const BitcoinTestnet: Network = {
+  type: 'network',
+  id: 'bitcoin-testnet',
+  title: 'Bitcoin Testnet',
+  description: 'The testnet is an alternative Bitcoin block chain to be used for testing',
+  blockExplorer: 'https://blockstream.info/testnet',
+  tokens: [
+    TestnetBitcoin
   ]
 }
