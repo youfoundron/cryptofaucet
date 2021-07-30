@@ -1,9 +1,28 @@
+import React, { useState, useEffect } from "react";
+import Fuse from "fuse.js";
 import Head from "next/head";
-import Image from "next/image";
+import { all } from "../data";
+import { AnyData } from "../domain/Data";
+import { TokenResultCard } from "../components/TokenResultCard";
+import { ChainResultCard } from "../components/ChainResultCard";
+import { NetworkResultCard } from "../components/NetworkResultCard";
+import { Chain } from "../domain/Chain";
+import { Network } from "../domain/Network";
+import { Token } from "../domain/Token";
 
-export default function Home() {
+const fuse = new Fuse(all, { keys: ["title", "id", "aggregateId"] });
+
+const HomePage: React.FC = () => {
+  const [query, setQuery] = useState<string>("");
+
+  const [searchResult, setSearchResult] = useState<Fuse.FuseResult<AnyData>[]>(
+    []
+  );
+
+  useEffect(() => setSearchResult(fuse.search(query)), [query]);
+
   return (
-    <div>
+    <div className="flex flex-col min-h-screen bg-gray-100">
       <Head>
         <title>Crypto Faucet</title>
         <meta
@@ -13,52 +32,59 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main className="flex justify-center flex-1 pt-6">
+        <section className="container flex flex-col space-y-6">
+          <h2 className="text-center font-black text-6xl">Find a faucet!</h2>
 
-        <p>
-          Get started by editing <code>pages/index.js</code>
-        </p>
+          <form className="w-full max-w-md mx-auto">
+            <input
+              autoFocus
+              className="w-full border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md"
+              type="text"
+              placeholder="Type to search by token, network, or chain..."
+              onChange={(e) => setQuery(e.target.value)}
+              value={query}
+            />
+          </form>
+          <p className="text-center space-x-4">
+            <span>💰 = token</span>
+            <span>🔗 = chain</span>
+            <span>🌐 = network</span>
+          </p>
 
-        <div>
-          <a href="https://nextjs.org/docs">
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn">
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/master/examples">
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+          <div className="space-y-3 w-full max-w-2xl mx-auto">
+            {searchResult.length > 0 &&
+              searchResult.map(({ item }) => {
+                if (item.type === "token") {
+                  return <TokenResultCard token={item as Token} />;
+                } else if (item.type === "chain") {
+                  return (
+                    <ChainResultCard key={item.id} chain={item as Chain} />
+                  );
+                } else if (item.type === "network") {
+                  return (
+                    <NetworkResultCard
+                      key={item.id}
+                      network={item as Network}
+                    />
+                  );
+                } else {
+                  console.error("unexpected search result", item);
+                  return null;
+                }
+              })}
+          </div>
+        </section>
       </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+      <footer className="flex justify-center py-4">
+        Made with ⚡ by&nbsp;
+        <a className="underline" href="https://youfoundron.com">
+          @youfoundron
         </a>
       </footer>
     </div>
   );
-}
+};
+
+export default HomePage;
