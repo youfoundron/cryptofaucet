@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Fuse from "fuse.js";
+import Link from "next/link";
 import Head from "next/head";
+import { XIcon } from "@heroicons/react/outline";
 import { all } from "../data";
 import { AnyData } from "../domain/Data";
 import { TokenResultCard } from "../components/TokenResultCard";
@@ -13,8 +15,8 @@ import { Token } from "../domain/Token";
 const fuse = new Fuse(all, { keys: ["title", "id", "aggregateId"] });
 
 const HomePage: React.FC = () => {
+  const [showBanner, setShowBanner] = useState<boolean>(true);
   const [query, setQuery] = useState<string>("");
-
   const [searchResult, setSearchResult] = useState<Fuse.FuseResult<AnyData>[]>(
     []
   );
@@ -31,6 +33,38 @@ const HomePage: React.FC = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {showBanner && (
+        <div className="relative bg-indigo-600">
+          <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+            <div className="pr-16 sm:text-center sm:px-16">
+              <p className="font-medium text-white">
+                <span className="md:hidden">We announced a new product!</span>
+                <span className="hidden md:inline">
+                  {`Can't find what you're looking for? Tell us what you need.`}
+                </span>
+                <span className="block sm:ml-2 sm:inline-block">
+                  <Link href="/feedback">
+                    <a className="text-white font-bold underline">
+                      {" "}
+                      Click here <span aria-hidden="true">&rarr;</span>
+                    </a>
+                  </Link>
+                </span>
+              </p>
+            </div>
+            <div className="absolute inset-y-0 right-0 pt-1 pr-1 flex items-start sm:pt-1 sm:pr-2 sm:items-start">
+              <button
+                type="button"
+                className="flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white"
+                onClick={() => setShowBanner(false)}
+              >
+                <span className="sr-only">Dismiss</span>
+                <XIcon className="h-6 w-6 text-white" aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <main className="flex justify-center flex-1 pt-6">
         <section className="container flex flex-col space-y-6">
@@ -76,7 +110,6 @@ const HomePage: React.FC = () => {
           </div>
         </section>
       </main>
-
       <footer className="flex justify-center py-4">
         Made with ⚡ by&nbsp;
         <a className="underline" href="https://youfoundron.com">

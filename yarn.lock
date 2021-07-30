@@ -200,6 +200,18 @@
     lodash.merge "^4.6.2"
     lodash.uniq "^4.5.0"
 
+"@typeform/embed-react@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@typeform/embed-react/-/embed-react-1.0.7.tgz#3a40a2ba3962a69f3bd48dccda207daea433a61a"
+  integrity sha512-dMxWITJ38KtJ/eInIlD/oC6gsAYEpczribjzR1cifob0PezPw5aDoD7HZpuJupqMPr5BcxpADA4SuDG6G/LgIA==
+  dependencies:
+    "@typeform/embed" "^1.10.0"
+
+"@typeform/embed@^1.10.0":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@typeform/embed/-/embed-1.15.2.tgz#25fd95fc4c50ec126a44561cf77ba48a21f314b0"
+  integrity sha512-LuBK9A7gfYrcqFi+WU9RpIQpdHyKOCZeQG5VuycZa5ri+r/n+q7au97+dwVFzsqvfwVKkErfhPP/brDSPFrg3A==
+
 "@types/node@*":
   version "16.4.7"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.7.tgz#f7afa78769d4b477f5092d7c3468e2e8653d779c"
