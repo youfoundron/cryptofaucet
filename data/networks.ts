@@ -2,6 +2,7 @@ import { Network } from '../domain/Network'
 import { KovanTokenEth, RinkebyTokenEth, RopstenTokenEth } from './tokens/ether'
 import { KovanTokenChainlink, RinkebyTokenChainlink, RopstenTokenChainlink } from './tokens/link'
 import { SokolPOA } from './tokens/poa'
+import { TestnetZEC } from './tokens/zcash'
 
 export const Ropsten: Network = {
   type: 'network',
@@ -47,5 +48,16 @@ export const Sokol: Network = {
   blockExplorer: 'https://blockscout.com/poa/sokol',
   tokens: [
     SokolPOA
+  ]
+}
+
+export const ZcashTestnet: Network = {
+  type: 'network',
+  id: 'zcash-testnet',
+  title: 'Zcash Testnet',
+  description: 'The Zcash testnet is an alternative blockchain that attempts to mimic the main Zcash network for testing purposes.',
+  blockExplorer: 'https://sochain.com/testnet/zcash',
+  tokens: [
+    TestnetZEC
   ]
 }
