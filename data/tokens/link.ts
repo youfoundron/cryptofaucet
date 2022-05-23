@@ -50,6 +50,6 @@ export const RinkebyTokenChainlink: Token = {
   title: "Rinkeby Chainlink",
   symbol: 'LINK',
   faucets: [
-    KovanFaucetChainlink
+    RinkebyFaucetChainlink
   ]
 }
