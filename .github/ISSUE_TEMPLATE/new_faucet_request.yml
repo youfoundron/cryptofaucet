@@ -1,0 +1,82 @@
+name: New Faucet Request
+description: Form with info required to add a new faucet
+title: "[Faucet]: ",
+labels: ["new faucet"],
+assignees:
+  - youfoundron
+body: 
+  - type: markdown
+    attributes:
+      value: Please fill out the details below with those of your desired faucet
+  
+  - type: input
+    id: token-name
+    attributes:
+      label: Token Name
+      placeholder: ex. USD Coin
+    validations:
+      required: true
+  
+  - type: input
+    id: token-symbol
+    attributes:
+      label: Token Symbol
+      placeholder: ex. USDC
+    validations:
+      required: true
+  
+  - type: input
+    id: chain-title
+    attributes:
+      label: Chain Title
+      placeholder: ex. Ethereum
+    validations:
+      required: true
+  
+  - type: input
+    id: network-title
+    attributes:
+      label: Network Title
+      placeholder: ex. Goerli
+    validations:
+      required: true
+  
+  - type: input
+    id: faucet-url
+    attributes:
+      label: Faucet URL
+      placeholder: ex. https://usdcfaucet.com/
+    validations:
+      required: true
+
+  - type: input
+    id: contract-address
+    attributes:
+      label: Contract Address (optional)
+      placeholder: ex. 0x07865c6e87b9f70255377e024ace6630c1eaa37f
+    validations:
+      required: false
+
+  - type: input
+    id: logo-url
+    attributes:
+      label: Logo URL (optional)
+      placeholder: ex. https://cryptologos.cc/usd-coin
+    validations:
+      required: false
+
+  - type: input
+    id: docs-url
+    attributes:
+      label: Docs URL (optional)
+      placeholder: ex. https://developers.circle.com/docs/usdc-on-testnet
+    validations:
+      required: false
+
+  - type: input
+    id: explorer-url
+    attributes:
+      label: Block Explorer URL (optional)
+      placeholder: ex. https://goerli.etherscan.io/address/0x07865c6e87b9f70255377e024ace6630c1eaa37f
+    validations:
+      required: false
