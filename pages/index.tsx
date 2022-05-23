@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <GithubCorner />
+      {/* <GithubCorner /> */}
       {showBanner && (
         <div className="relative bg-indigo-600">
           <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
@@ -47,12 +47,12 @@ const HomePage: React.FC = () => {
                   {`Can't find what you're looking for? Tell us what you need.`}
                 </span>
                 <span className="block sm:ml-2 sm:inline-block">
-                  <Link href="/feedback">
-                    <a className="text-white font-bold underline">
-                      {" "}
-                      Click here <span aria-hidden="true">&rarr;</span>
-                    </a>
-                  </Link>
+                  <a
+                    className="text-white font-bold underline"
+                    href='https://github.com/youfoundron/cryptofaucet/issues/new?template=new_faucet_request.md'
+                  >
+                    Click here <span aria-hidden="true">&rarr;</span>
+                  </a>
                 </span>
               </p>
             </div>
