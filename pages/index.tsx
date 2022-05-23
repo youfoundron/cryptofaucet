@@ -49,7 +49,7 @@ const HomePage: React.FC = () => {
                 <span className="block sm:ml-2 sm:inline-block">
                   <a
                     className="text-white font-bold underline"
-                    href='https://github.com/youfoundron/cryptofaucet/issues/new?template=new_faucet_request.md'
+                    href='https://github.com/youfoundron/cryptofaucet/issues/new?template=new_faucet_request.yml'
                   >
                     Click here <span aria-hidden="true">&rarr;</span>
                   </a>

@@ -1,7 +1,7 @@
-name: New Faucet Request
+name: Faucet Request
 description: Form with info required to add a new faucet
-title: "[Faucet]: "
-labels: ["new faucet"]
+title: "[Faucet Request]: "
+labels: ["faucet request"]
 assignees:
   - youfoundron
 body: 
