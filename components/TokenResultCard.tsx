@@ -43,18 +43,18 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
     >
       <div className="border-t border-gray-200 px-0 py-2 mt-4 prose prose-indigo">
         <dl className="sm:divide-y sm:divide-gray-200">
-          <div className="py-4">
-            {tokenNetworkIds.length > 1 && (<dt className="flex justify-between">
+          <div className="py-2">
+            {tokenNetworkIds.length > 1 && (<dt className="w-full flex flex-col justify-center items-center space-y-2">
               <span className="text-sm font-medium text-gray-500">
-                🚰 Faucets by Network
+                🚰 Faucets by network
               </span>
-              <span className='space-x-2'>
+              <span className='flex flex-row space-x-2 items-center'>
                 {tokenNetworkIds.map((networkId) => {
                   const network = findNetworkById(networkId);
                   const checkId = `show-${token.id}-${networkId}`;
 
                   return (
-                    <span key={networkId} className='group cursor-pointer inline-flex flex-row items-center justify-center space-x-1'>
+                    <div key={networkId} className='group cursor-pointer inline-flex flex-row items-center justify-center space-x-1'>
                       <input
                         id={checkId}
                         name={checkId}
@@ -67,7 +67,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
                         htmlFor={checkId}
                         className="cursor-pointer group-hover:underline text-sm">{network.title}
                       </label>
-                    </span>
+                    </div>
                   )
                 })}
               </span>
@@ -87,7 +87,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
                           <label className="text-lg font-semibold">{network.title}</label>
                         {showNetworkLink && (
                           <Link href={`/networks/${networkId}`}>
-                            <a className='text-xs'>View all tokens</a>
+                            <a className='text-xs'>view all tokens</a>
                           </Link>
                         )}
                         </span>
