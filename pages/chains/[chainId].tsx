@@ -6,7 +6,12 @@ import {
 } from "../../util/getStatic";
 
 export const ChainPage: React.FC<{ chain: Chain }> = ({ chain }) => {
-  return <h1>Chain: {chain.title}</h1>;
+  return (
+    <div>
+      <h1>Chain: {chain.title}</h1>
+      <p>WIP...</p>
+    </div>
+  );
 };
 
 export const getStaticPaths = getStaticPathsOffChainId;

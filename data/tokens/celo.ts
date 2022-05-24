@@ -1,18 +1,21 @@
 import { Faucet } from "../../domain/Faucet";
 import { Token } from "../../domain/Token";
 
-const AlphajoresFaucetCelo: Faucet = {
+const faucetAlfajoresCelo: Faucet = {
+  networkId: 'celo-alfajores',
   url: 'https://celo.org/developers/faucet',
   maintainer: 'Celo Foundation',
   maintainerWebsite: 'https://celo.org/'
 }
 
-export const CeloToken: Token = {
+export const tokenCelo: Token = {
   type: 'token',
   id: 'celo',
+  chainId: 'celo-network',
   title: 'Celo',
+  logoPath: '/logos/celo-celo-logo.svg',
   symbol: 'CELO',
   faucets: [
-    AlphajoresFaucetCelo
+    faucetAlfajoresCelo
   ]
 }

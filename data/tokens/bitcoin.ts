@@ -1,45 +1,52 @@
 import { Faucet } from "../../domain/Faucet";
 import { Token } from "../../domain/Token";
 
-const MempoolcoFaucet: Faucet = {
+const faucetMempoolco: Faucet = {
+  networkId: 'bitcoin-testnet',
   url: 'https://testnet-faucet.mempool.co/',
   maintainer: 'Mempoolco',
   maintainerWebsite: 'http://mempool.co/',
 }
 
-const KuttlerFaucet: Faucet = {
+const faucetKuttler: Faucet = {
+  networkId: 'bitcoin-testnet',
   url: 'https://kuttler.eu/en/bitcoin/btc/faucet/',
   maintainer: 'Nicolas Kuttler',
   maintainerWebsite: 'https://kuttler.eu'
 }
 
-const UO1Faucet: Faucet = {
+const faucetUO1: Faucet = {
+  networkId: 'bitcoin-testnet',
   url: 'https://bitcoinfaucet.uo1.net/',
   maintainer: 'UO1'
 }
 
-const CoinFaucet: Faucet = {
+const faucetCoin: Faucet = {
+  networkId: 'bitcoin-testnet',
   url: 'https://coinfaucet.eu/en/btc-testnet',
   maintainer: 'CoinFaucet',
   maintainerWebsite: 'https://coinfaucet.eu/'
 }
 
-const BitapsFaucet: Faucet = {
+const faucetBitaps: Faucet = {
+  networkId: 'bitcoin-testnet',
   url: 'https://tbtc.bitaps.com/',
   maintainer: 'Bitaps',
   maintainerWebsite: 'https://bitaps.com/',
 }
 
-export const TestnetBitcoin: Token = {
+export const tokenBitcoin: Token = {
   type: 'token',
   id: 'btc',
+  chainId: 'bitcoin',
   title: 'Bitcoin',
-  symbol: 'TBTC',
+  logoPath: '/logos/bitcoin-btc-logo.svg',
+  symbol: 'BTC',
   faucets: [
-    MempoolcoFaucet,
-    KuttlerFaucet,
-    UO1Faucet,
-    CoinFaucet,
-    BitapsFaucet
+    faucetMempoolco,
+    faucetKuttler,
+    faucetUO1,
+    faucetCoin,
+    faucetBitaps
   ]
 }

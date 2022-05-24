@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 export interface ResultCardProps {
+  logo?: React.ReactNode;
   title: string;
   description?: string;
   cta?: {
@@ -11,6 +12,7 @@ export interface ResultCardProps {
 }
 
 export const ResultCard: React.FC<ResultCardProps> = ({
+  logo,
   title,
   description,
   cta,
@@ -20,12 +22,17 @@ export const ResultCard: React.FC<ResultCardProps> = ({
     <div className="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md">
       <div className="-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap">
         <div className="ml-4 mt-4">
-          <h3 className="text-lg leading-6 font-medium text-gray-900">
-            {title}
-          </h3>
-          {description && (
-            <p className="mt-1 text-sm text-gray-500">{description}</p>
-          )}
+          <div className='flex flex-start justify-start items-center space-x-2'>
+            {logo}
+            <div>              
+              <h3 className="text-lg leading-6 font-medium text-gray-900">
+                {title}
+              </h3>
+              {description && (
+                <p className="mt-1 text-sm text-gray-500">{description}</p>
+              )}
+            </div>
+          </div>
         </div>
         {cta && (
           <div className="ml-4 mt-4 flex-shrink-0">

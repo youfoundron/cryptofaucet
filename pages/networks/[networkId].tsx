@@ -6,7 +6,12 @@ import {
 } from "../../util/getStatic";
 
 export const NetworkPage: React.FC<{ network: Network }> = ({ network }) => {
-  return <h1>Network: {network.title}</h1>;
+  return (
+    <div>
+      <h1>Network: {network.title}</h1>
+      <p>WIP...</p>
+    </div>
+  );
 };
 
 export const getStaticPaths = getStaticPathsOffNetworkId;

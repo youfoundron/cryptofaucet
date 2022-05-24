@@ -1,46 +1,83 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Token } from "../domain/Token";
+import Link from "next/link";
+import { NetworkId } from "../domain/Network";
+import { TokenPopulated } from "../domain/Token";
 import { ResultCard } from "./ResultCard";
+import { findNetworkById, getFaucetsByNetwork, networkHasMultipleTokens } from "../data/reducers";
+import { ExternalLinkIcon } from "@heroicons/react/outline";
 
 export interface TokenResultCardProps {
-  token: Token;
+  token: TokenPopulated;
 }
 
-export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
+export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {  
+  const logo = token.logoPath && (
+    <img
+      src={token.logoPath}
+      className='w-8 h-8'
+      alt={`${token.id}-logo`}
+    />
+  );
+  
+  const faucetsByNetwork = getFaucetsByNetwork(token.faucets);
+  
   return (
     <ResultCard
-      title={`💰 ${token.title}`}
+      logo={logo}
+      title={`${token.title} (${token.symbol})`}
       description={token.description}
-      cta={{ url: `/tokens/${token.id}`, label: "See more" }}
     >
       <div className="border-t border-gray-200 px-0 py-2 mt-4 prose prose-indigo">
         <dl className="sm:divide-y sm:divide-gray-200">
-          {token.symbol && (
-            <div className="py-4 sm:grid sm:grid-cols-3 last:pb-2">
-              <dt className="text-sm font-medium text-gray-500">🔤 Symbol</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                {token.symbol}
-              </dd>
-            </div>
-          )}
-          {token.faucets.length > 0 && (
-            <div className="py-4 sm:grid sm:grid-cols-3 last:pb-1">
-              <dt className="text-sm font-medium text-gray-500">🚰 Faucets</dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2 space-x-2">
-                {token.faucets.map((faucet, i) => (
-                  <a
-                    key={i}
-                    href={faucet.url}
-                    className="underline"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {faucet.maintainer}
-                  </a>
-                ))}
-              </dd>
-            </div>
-          )}
+          <div className="py-4">
+            <dt className="text-sm font-medium text-gray-500">🚰 Faucets by Network</dt>
+            <dd className="mt-4 text-sm text-gray-900 space-x-2">
+              <div>
+              {Object.entries(faucetsByNetwork).map(([networkId, faucets]) => {
+                const network = findNetworkById(networkId as NetworkId);
+                const showNetworkLink = networkHasMultipleTokens(networkId as NetworkId);
+                
+                return (
+                  <div key={networkId} className='ml-0'>
+                    <div className='flex justify-between'>
+                      <div className="flex flex-col justify-start space-y-0">
+                        <span className="space-x-1">
+                          <label className="text-lg font-semibold">{network.title}</label>
+                        {showNetworkLink && (
+                          <Link href={`/networks/${networkId}`}>
+                            <a className='text-xs'>View all tokens</a>
+                          </Link>
+                        )}
+                        </span>
+                        {network.description && (<p>{network.description}</p>)}
+                      </div>
+                      <div className='flex justify-end space-x-2'>
+                        {network.officialWebsite && (
+                          <a className='flex justify-start items-center' href={network.officialWebsite} target='_blank' rel="noreferrer">
+                            Website <ExternalLinkIcon className="h-4 w-5"/>
+                          </a>
+                        )}
+                        {network.blockExplorer && (
+                          <a className='flex justify-start items-center' href={network.blockExplorer} target='_blank' rel="noreferrer">
+                            Explorer <ExternalLinkIcon className="h-4 w-5 "/>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                    <ul className="list">
+                      {faucets.map((faucet, i) => {
+                        return (<li key={faucet.url}>
+                          <a href={faucet.url} target='_blank' rel="noreferrer">Faucet {i+1}</a> by <a href={faucet.url}>{faucet.maintainer}</a>
+                        </li>)
+                      })}
+                    </ul>
+                  </div>
+                )
+              })}
+              </div>
+            </dd>
+          </div>
         </dl>
       </div>
     </ResultCard>

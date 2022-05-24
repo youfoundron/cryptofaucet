@@ -1,4 +1,7 @@
-import { chains, networks, tokens } from "../data"
+// import { chains, networks, tokens } from "../data"
+import chains from '../data/chains';
+import networks from '../data/networks';
+import tokens from '../data/tokens';
 import { Chain } from "../domain/Chain";
 import { Network } from "../domain/Network";
 import { Token } from "../domain/Token";

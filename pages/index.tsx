@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from "react";
 import Fuse from "fuse.js";
-import Link from "next/link";
 import Head from "next/head";
 import { XIcon } from "@heroicons/react/outline";
-import { all } from "../data";
-import { AnyData } from "../domain/Data";
+import allTokens from '../data/tokens'
+import { Token, TokenPopulated } from "../domain/Token";
 import { TokenResultCard } from "../components/TokenResultCard";
-import { ChainResultCard } from "../components/ChainResultCard";
-import { NetworkResultCard } from "../components/NetworkResultCard";
-import { Chain } from "../domain/Chain";
-import { Network } from "../domain/Network";
-import { Token } from "../domain/Token";
-import { GithubCorner } from "../components/GithubCorner";
+import { populateToken } from "../data/reducers";
 
-const fuse = new Fuse(all, { keys: ["title", "id", "aggregateId"] });
+const allPopulatedTokens = allTokens.map(populateToken);
+
+const fuse = new Fuse(allPopulatedTokens, { keys: ["title", "symbol", "chain.title", "networks.title"] });
 
 const HomePage: React.FC = () => {
   const [showBanner, setShowBanner] = useState<boolean>(true);
   const [query, setQuery] = useState<string>("");
-  const [searchResult, setSearchResult] = useState<Fuse.FuseResult<AnyData>[]>(
+  const [searchResult, setSearchResult] = useState<Fuse.FuseResult<TokenPopulated>[]>(
     []
   );
 
   useEffect(() => setSearchResult(fuse.search(query)), [query]);
+
+  const populatedTokens = searchResult.length > 0
+    ? searchResult.map(({ item }) => item)
+    : allPopulatedTokens
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
@@ -34,7 +34,6 @@ const HomePage: React.FC = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <GithubCorner /> */}
       {showBanner && (
         <div className="relative bg-indigo-600">
           <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
@@ -86,33 +85,14 @@ const HomePage: React.FC = () => {
               value={query}
             />
           </form>
-          <p className="text-center space-x-4">
-            <span>💰 = token</span>
-            <span>🔗 = chain</span>
-            <span>🌐 = network</span>
-          </p>
 
           <div className="space-y-3 w-full max-w-2xl mx-auto">
-            {searchResult.length > 0 &&
-              searchResult.map(({ item }) => {
-                if (item.type === "token") {
-                  return <TokenResultCard token={item as Token} />;
-                } else if (item.type === "chain") {
-                  return (
-                    <ChainResultCard key={item.id} chain={item as Chain} />
-                  );
-                } else if (item.type === "network") {
-                  return (
-                    <NetworkResultCard
-                      key={item.id}
-                      network={item as Network}
-                    />
-                  );
-                } else {
-                  console.error("unexpected search result", item);
-                  return null;
-                }
-              })}
+            {populatedTokens.map(pToken =>
+              <TokenResultCard
+                key={pToken.id}
+                token={pToken}
+              />
+            )}
           </div>
         </section>
       </main>

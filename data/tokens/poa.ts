@@ -1,18 +1,20 @@
 import { Faucet } from '../../domain/Faucet'
 import { Token } from '../../domain/Token'
 
-const SokolFaucetSPOA: Faucet = {
+const faucetSokolPOA: Faucet = {
+  networkId: 'poa-sokol',
   url: 'https://faucet.poa.network/',
   maintainer: 'POA Network',
   maintainerWebsite: 'https://www.poa.network/for-developers/developer-resourses#poa-sokol-testnet',
 }
 
-export const SokolPOA: Token = {
+export const tokenPOA: Token = {
   type: 'token',
   id: 'spoa',
-  title: 'POA Sokol',
-  symbol: 'SPOA',
+  chainId: 'poa',
+  title: 'PoA Token',
+  symbol: 'POA',
   faucets: [
-    SokolFaucetSPOA
+    faucetSokolPOA
   ]
 }

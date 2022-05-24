@@ -6,7 +6,12 @@ import {
 } from "../../util/getStatic";
 
 export const TokenPage: React.FC<{ token: Token }> = ({ token }) => {
-  return <h1>Token: {token.title}</h1>;
+  return (
+    <div>
+      <h1>Token: {token.title}</h1>
+      <p>WIP...</p>
+    </div>
+  );
 };
 
 export const getStaticPaths = getStaticPathsOffTokenId;
