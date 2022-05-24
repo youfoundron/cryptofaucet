@@ -43,6 +43,13 @@ const faucetRinkebyEthGeth: Faucet = {
   maintainerWebsite: 'https://www.rinkeby.io/#stats',
 }
 
+const faucetRinkebyEthAlchemy: Faucet = {
+  networkId: 'ethereum-rinkeby',
+  url: 'https://rinkebyfaucet.com/',
+  maintainer: 'Alchemy',
+  maintainerWebsite: 'https://www.alchemy.com/',
+}
+
 export const tokenEther: Token = {
   type: 'token',
   id: 'eth',
@@ -60,6 +67,7 @@ export const tokenEther: Token = {
     faucetKovanEthParity,
     faucetKovanEthParityGitter,
     // Rinkeby
-    faucetRinkebyEthGeth
+    faucetRinkebyEthGeth,
+    faucetRinkebyEthAlchemy
   ]
 }
