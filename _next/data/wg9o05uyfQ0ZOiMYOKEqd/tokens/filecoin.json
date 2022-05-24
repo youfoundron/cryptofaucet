@@ -1,0 +1,1 @@
+{"pageProps":{"token":{"type":"token","id":"filecoin","chainId":"filecoin","title":"Filecoin","logoPath":"/logos/filecoin-fil-logo.svg","symbol":"FIL","faucets":[{"networkId":"filecoin-calibration","url":"https://faucet.calibration.fildev.network/","maintainer":"Protocol Labs","maintainerWebsite":"https://protocol.ai/"}]}},"__N_SSG":true}
