@@ -7,6 +7,7 @@ export type NetworkId =
   | 'ethereum-kovan'
   | 'ethereum-ropsten'
   | 'ethereum-rinkeby'
+  | 'filecoin-calibration'
   | 'poa-sokol'
   | 'zcash-testnet'
 

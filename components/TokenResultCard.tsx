@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { NetworkId } from "../domain/Network";
 import { TokenPopulated } from "../domain/Token";
 import { ResultCard } from "./ResultCard";
 import { findNetworkById, getFaucetsByNetwork, networkHasMultipleTokens } from "../data/reducers";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
+import { Faucet } from "../domain/Faucet";
 
 export interface TokenResultCardProps {
   token: TokenPopulated;
@@ -20,7 +21,19 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
     />
   );
   
+  const tokenNetworkIds = token.networks.map(network => network.id);
   const faucetsByNetwork = getFaucetsByNetwork(token.faucets);
+  
+  const [selectedNetworkIds, setSelectedNetworkIds] = useState<Set<NetworkId>>(new Set(tokenNetworkIds.slice(0, 1)))
+  const handleNetworkToggle = (networkId: NetworkId) => {
+    if (selectedNetworkIds.has(networkId)) {
+      setSelectedNetworkIds(prev => new Set(
+        [...prev].filter(id => id !== networkId)
+      ))
+    } else {
+      setSelectedNetworkIds(prev => new Set(prev.add(networkId)))
+    }
+  }
   
   return (
     <ResultCard
@@ -31,10 +44,38 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
       <div className="border-t border-gray-200 px-0 py-2 mt-4 prose prose-indigo">
         <dl className="sm:divide-y sm:divide-gray-200">
           <div className="py-4">
-            <dt className="text-sm font-medium text-gray-500">🚰 Faucets by Network</dt>
+            {tokenNetworkIds.length > 1 && (<dt className="flex justify-between">
+              <span className="text-sm font-medium text-gray-500">
+                🚰 Faucets by Network
+              </span>
+              <span className='space-x-2'>
+                {tokenNetworkIds.map((networkId) => {
+                  const network = findNetworkById(networkId);
+                  const checkId = `show-${token.id}-${networkId}`;
+
+                  return (
+                    <span key={networkId} className='group cursor-pointer inline-flex flex-row items-center justify-center space-x-1'>
+                      <input
+                        id={checkId}
+                        name={checkId}
+                        className="cursor-pointer group-hover:underline"
+                        type='checkbox'
+                        onChange={e => handleNetworkToggle(networkId)}
+                        checked={selectedNetworkIds.has(networkId)}
+                      />
+                      <label
+                        htmlFor={checkId}
+                        className="cursor-pointer group-hover:underline text-sm">{network.title}
+                      </label>
+                    </span>
+                  )
+                })}
+              </span>
+            </dt>)}
             <dd className="mt-4 text-sm text-gray-900 space-x-2">
               <div>
-              {Object.entries(faucetsByNetwork).map(([networkId, faucets]) => {
+              {[...selectedNetworkIds.values()].map((networkId) => {
+                const faucets = faucetsByNetwork[networkId as NetworkId] as Faucet[];
                 const network = findNetworkById(networkId as NetworkId);
                 const showNetworkLink = networkHasMultipleTokens(networkId as NetworkId);
                 

@@ -5,6 +5,7 @@ export type ChainId =
   | 'bitcoin'
   | 'celo-network'
   | 'ethereum' 
+  | 'filecoin'
   | 'poa'
   | 'zcash'
 
