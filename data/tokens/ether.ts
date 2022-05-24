@@ -22,6 +22,34 @@ const faucetRopstenEthDimensionsNetwork: Faucet = {
   maintainerWebsite: 'https://dimensions.network/',
 }
 
+const faucetRopstenEthKomputing: Faucet = {
+  networkId: 'ethereum-ropsten',
+  url: 'https://fauceth.komputing.org/',
+  maintainer: 'Komputing',
+  maintainerWebsite: 'https://komputing.org/'
+}
+
+const faucetRopstenEthParadigm: Faucet = {
+  networkId: 'ethereum-ropsten',
+  url: 'https://faucet.paradigm.xyz/',
+  maintainer: 'Paradigm',
+  maintainerWebsite: 'https://www.paradigm.xyz/'
+}
+
+const faucetKovanEthChainlink: Faucet = {
+  networkId: 'ethereum-kovan',
+  url: 'https://faucets.chain.link/kovan',
+  maintainer: 'Chainlink',
+  maintainerWebsite: 'https://www.chain.link/',
+}
+
+const faucetKovanEthParadigm: Faucet = {
+  networkId: 'ethereum-kovan',
+  url: 'https://faucet.paradigm.xyz/',
+  maintainer: 'Paradigm',
+  maintainerWebsite: 'https://www.paradigm.xyz/'
+}
+
 const faucetKovanEthParity: Faucet = {
   networkId: 'ethereum-kovan',
   url: 'https://faucet.kovan.network/',
@@ -29,7 +57,7 @@ const faucetKovanEthParity: Faucet = {
   maintainerWebsite: 'https://kovan-testnet.github.io/website/'
 }
 
-const faucetKovanEthParityGitter: Faucet = {
+const faucetKovanEthGitter: Faucet = {
   networkId: 'ethereum-kovan',
   url: 'https://gitter.im/kovan-testnet/faucet',
   maintainer: 'Gitter',
@@ -50,6 +78,55 @@ const faucetRinkebyEthAlchemy: Faucet = {
   maintainerWebsite: 'https://www.alchemy.com/',
 }
 
+const faucetRinkebyEthChainlink: Faucet = {
+  networkId: 'ethereum-rinkeby',
+  url: 'https://faucets.chain.link/rinkeby',
+  maintainer: 'Chainlink',
+  maintainerWebsite: 'https://www.chain.link/',
+}
+
+const faucetRinkebyEthParadigm: Faucet = {
+  networkId: 'ethereum-rinkeby',
+  url: 'https://faucet.paradigm.xyz/',
+  maintainer: 'Paradigm',
+  maintainerWebsite: 'https://www.paradigm.xyz/'
+}
+
+const faucetGoerliEthAlchemy: Faucet = {
+  networkId: 'ethereum-goerli',
+  url: 'https://goerlifaucet.com/',
+  maintainer: 'Alchemy',
+  maintainerWebsite: 'https://www.alchemy.com/',
+}
+
+const faucetGoerliEthMuditGupta: Faucet = {
+  networkId: 'ethereum-goerli',
+  url: 'https://goerli-faucet.mudit.blog/',
+  maintainer: 'Mudit Gupta',
+  maintainerWebsite: 'https://mudit.blog/'
+}
+
+const faucetGoerliEthChainlink: Faucet = {
+  networkId: 'ethereum-goerli',
+  url: 'https://faucets.chain.link/goerli',
+  maintainer: 'Chainlink',
+  maintainerWebsite: 'https://www.chain.link/',
+}
+
+const faucetGoerliEthParadigm: Faucet = {
+  networkId: 'ethereum-goerli',
+  url: 'https://faucet.paradigm.xyz/',
+  maintainer: 'Paradigm',
+  maintainerWebsite: 'https://www.paradigm.xyz/'
+}
+
+const faucetSepoliaEth: Faucet = {
+  networkId: 'ethereum-sepolia',
+  url: 'https://faucet.sepolia.dev/',
+  maintainer: 'Komputing',
+  maintainerWebsite: 'https://komputing.org/'
+}
+
 export const tokenEther: Token = {
   type: 'token',
   id: 'eth',
@@ -60,14 +137,27 @@ export const tokenEther: Token = {
   symbol: 'ETH',
   faucets: [
     // Ropsten
-    faucetRopstenEthMetaMask,
-    faucetRopstenEthDimensionsNetwork,
     faucetRopstenEthDefiKaren,
+    faucetRopstenEthDimensionsNetwork,
+    faucetRopstenEthKomputing,
+    faucetRopstenEthParadigm,
+    faucetRopstenEthMetaMask,
     // Kovan
+    faucetKovanEthChainlink,
+    faucetKovanEthGitter,
+    faucetKovanEthParadigm,
     faucetKovanEthParity,
-    faucetKovanEthParityGitter,
     // Rinkeby
+    faucetRinkebyEthAlchemy,
+    faucetRinkebyEthChainlink,
     faucetRinkebyEthGeth,
-    faucetRinkebyEthAlchemy
+    faucetRinkebyEthParadigm,
+    // Görli
+    faucetGoerliEthAlchemy,
+    faucetGoerliEthChainlink,
+    faucetGoerliEthMuditGupta,
+    faucetGoerliEthParadigm,
+    // Sepolia
+    faucetSepoliaEth,
   ]
 }

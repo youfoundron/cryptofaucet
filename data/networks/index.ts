@@ -51,6 +51,15 @@ export const networkEthereumRopsten: Network = {
   blockExplorer: 'https://ropsten.etherscan.io/',
 }
 
+export const networkEthereumSepolia: Network = {
+  type: 'network',
+  id: 'ethereum-sepolia',
+  title: 'Sepolia',
+  description: 'A cross-client proof-of-work testing network for Ethereum',
+  blockExplorer: 'https://sepolia.etherscan.io/',
+  officialWebsite: 'https://sepolia.dev/',
+}
+
 export const networkFilecoinCalibration: Network = {
   type: 'network',
   id: 'filecoin-calibration',
@@ -78,9 +87,11 @@ export const networkZcashTestnet: Network = {
 export const allNetworks = [
   networkBitcoinTestnet,
   networkCeloAlfajores,
+  networkEthereumGoerli,
   networkEthereumKovan,
   networkEthereumRinkeby,
   networkEthereumRopsten,
+  networkEthereumSepolia,
   networkFilecoinCalibration,
   networkPOASokol,
   networkZcashTestnet
