@@ -1,0 +1,1 @@
+{"pageProps":{"token":{"type":"token","id":"zec","chainId":"zcash","logoPath":"/logos/zcash-zec-logo.svg","title":"Zcash","symbol":"ZEC","faucets":[{"networkId":"zcash-testnet","url":"https://faucet.testnet.z.cash/","maintainer":"Electric Coin Company","maintainerWebsite":"https://z.cash/"}]}},"__N_SSG":true}
