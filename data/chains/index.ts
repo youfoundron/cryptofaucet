@@ -56,6 +56,16 @@ export const chainPOA: Chain = {
   ]
 }
 
+export const chainStacks: Chain = {
+  type: 'chain',
+  id: 'stacks',
+  title: 'Stacks Network',
+  documentationWebsite: 'https://docs.stacks.co/',
+  networkIds: [
+    'stacks-testnet',
+  ]
+}
+
 export const chainZcash: Chain = {
   type: 'chain',
   id: 'zcash',
@@ -72,6 +82,7 @@ export const allChains = [
   chainCelo,
   chainEthereum,
   chainPOA,
+  chainStacks,
   chainZcash
 ]
 

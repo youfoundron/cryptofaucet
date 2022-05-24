@@ -7,6 +7,7 @@ export type ChainId =
   | 'ethereum' 
   | 'filecoin'
   | 'poa'
+  | 'stacks'
   | 'zcash'
 
 export interface Chain extends Data {

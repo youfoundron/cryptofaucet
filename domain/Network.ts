@@ -10,6 +10,7 @@ export type NetworkId =
   | 'ethereum-sepolia'
   | 'filecoin-calibration'
   | 'poa-sokol'
+  | 'stacks-testnet'
   | 'zcash-testnet'
 
 export interface Network extends Data {
