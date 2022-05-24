@@ -109,7 +109,10 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
                     <ul className="list">
                       {faucets.map((faucet, i) => {
                         return (<li key={faucet.url}>
-                          <a href={faucet.url} target='_blank' rel="noreferrer">Faucet {i+1}</a> by <a href={faucet.url}>{faucet.maintainer}</a>
+                          <a href={faucet.url} target='_blank' rel="noreferrer">Faucet {i+1}</a> by {faucet.maintainerWebsite
+                            ? <a target='_blank' rel="noreferrer" href={faucet.maintainerWebsite}>{faucet.maintainer}</a>
+                            : <span>{faucet.maintainer}</span>
+                          }
                         </li>)
                       })}
                     </ul>
