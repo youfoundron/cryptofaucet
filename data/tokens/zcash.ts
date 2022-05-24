@@ -8,6 +8,13 @@ const faucetZcashTestnet: Faucet = {
   maintainerWebsite: 'https://z.cash/'
 }
 
+const faucetZecpages: Faucet = {
+  networkId: 'zcash-testnet',
+  url: 'https://faucet.zecpages.com/',
+  maintainer: 'ZecPages',
+  maintainerWebsite: 'https://zecpages.com/',
+}
+
 export const tokenZcash: Token = {
   type: 'token',
   id: 'zec',
@@ -16,6 +23,7 @@ export const tokenZcash: Token = {
   title: 'Zcash',
   symbol: 'ZEC',
   faucets: [
-    faucetZcashTestnet
+    faucetZcashTestnet,
+    faucetZecpages
   ]
 }
