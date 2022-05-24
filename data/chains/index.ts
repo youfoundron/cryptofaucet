@@ -35,6 +35,16 @@ export const chainEthereum: Chain = {
   ]
 }
 
+export const chainFilecoin: Chain = {
+  type: 'chain',
+  id: 'filecoin',
+  title: 'Filecoin',
+  documentationWebsite: 'https://docs.filecoin.io/',
+  networkIds: [
+    'filecoin-calibration',
+  ]
+}
+
 export const chainPOA: Chain = {
   type: 'chain',
   id: 'poa',

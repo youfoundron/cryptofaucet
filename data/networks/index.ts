@@ -51,6 +51,14 @@ export const networkEthereumRopsten: Network = {
   blockExplorer: 'https://ropsten.etherscan.io/',
 }
 
+export const networkFilecoinCalibration: Network = {
+  type: 'network',
+  id: 'filecoin-calibration',
+  title: 'Calibration',
+  officialWebsite: 'http://www.calibration.fildev.network/',
+  blockExplorer: 'https://calibration.filscout.com/en',
+}
+
 export const networkPOASokol: Network = {
   type: 'network',
   id: 'poa-sokol',
@@ -73,6 +81,7 @@ export const allNetworks = [
   networkEthereumKovan,
   networkEthereumRinkeby,
   networkEthereumRopsten,
+  networkFilecoinCalibration,
   networkPOASokol,
   networkZcashTestnet
 ]
