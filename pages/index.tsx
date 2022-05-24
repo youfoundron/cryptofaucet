@@ -48,7 +48,8 @@ const HomePage: React.FC = () => {
                 <span className="block sm:ml-2 sm:inline-block">
                   <a
                     className="text-white font-bold underline"
-                    href='https://github.com/youfoundron/cryptofaucet/issues/new?template=new_faucet_request.yml'
+                    href='https://github.com/youfoundron/cryptofaucet/issues/new?assignees=youfoundron&labels=faucet+request&template=new_faucet_request.yml&title=%5BFaucet+Request%5D%3A+'
+                    target='_blank' rel="noreferrer"
                   >
                     Click here <span aria-hidden="true">&rarr;</span>
                   </a>
