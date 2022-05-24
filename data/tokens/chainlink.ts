@@ -20,7 +20,7 @@ const faucetKovanChainlink: Faucet = {
 
 const faucetRinkebyChainlink: Faucet = {
   networkId: 'ethereum-rinkeby',
-  url: 'https://rinkeby.chain.link',
+  url: 'https://faucets.chain.link/rinkeby',
   ...chainlinkFaucetBase
 }
 
