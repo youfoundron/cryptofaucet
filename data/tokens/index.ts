@@ -12,6 +12,7 @@ import { tokenStacks } from "./stacks";
 import { tokenKadena } from "./kadena";
 import { tokenAlgorand } from "./algorand";
 import { tokenSolana } from "./solana";
+import { tokenXrp } from "./xrp";
 
 export const allTokens = [
   tokenEther,
@@ -27,6 +28,7 @@ export const allTokens = [
   tokenKadena,
   tokenSolana,
   tokenStacks,
+  tokenXrp,
   tokenZcash
 ]
 

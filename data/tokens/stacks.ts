@@ -13,6 +13,7 @@ export const tokenStacks: Token = {
   id: 'stacks',
   chainId: 'stacks',
   title: 'Stacks',
+  description: 'Formerly known as Blockstack',
   logoPath: '/logos/stacks-stx-logo.svg',
   symbol: 'STX',
   faucets: [

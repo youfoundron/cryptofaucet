@@ -106,6 +106,16 @@ export const chainStacks: Chain = {
   ]
 }
 
+export const chainXrpLedger: Chain = {
+  type: 'chain',
+  id: 'xrp-ledger',
+  title: 'XRP Ledger',
+  documentationWebsite: 'https://xrpl.org/docs.html',
+  networkIds: [
+    'xrp-testnet'
+  ]
+}
+
 export const chainZcash: Chain = {
   type: 'chain',
   id: 'zcash',
@@ -127,6 +137,7 @@ export const allChains = [
   chainPOA,
   chainSolana,
   chainStacks,
+  chainXrpLedger,
   chainZcash
 ]
 

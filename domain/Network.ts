@@ -15,6 +15,7 @@ export type NetworkId =
   | 'kadena-testnet'
   | 'solana-testnet'
   | 'stacks-testnet'
+  | 'xrp-testnet'
   | 'zcash-testnet'
 
 type MetaMaskNetworkConfig = {

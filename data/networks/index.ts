@@ -118,6 +118,13 @@ export const networkStacksTestnet: Network = {
   blockExplorer: 'https://explorer.stacks.co/?chain=testnet'
 }
 
+export const networkXrpTestnet: Network = {
+  type: 'network',
+  id: 'xrp-testnet',
+  title: 'XRP Testnet',
+  blockExplorer: 'https://testnet.xrpl.org/'
+}
+
 export const networkZcashTestnet: Network = {
   type: 'network',
   id: 'zcash-testnet',
@@ -141,6 +148,7 @@ export const allNetworks = [
   networkKadenaTestnet,
   networkSolanaTestnet,
   networkStacksTestnet,
+  networkXrpTestnet,
   networkZcashTestnet
 ]
 

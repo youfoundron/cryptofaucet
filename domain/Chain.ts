@@ -12,6 +12,7 @@ export type ChainId =
   | 'poa'
   | 'solana'
   | 'stacks'
+  | 'xrp-ledger'
   | 'zcash'
 
 export interface Chain extends Data {
