@@ -5,7 +5,7 @@ const faucetFujiAvalanche: Faucet = {
   networkId: 'avalanche-fuji',
   url: 'https://faucet.avax.network/',
   maintainer: 'Avalanche Foundation',
-  maintainerWebsite: 'https://kadena.io/'
+  maintainerWebsite: 'https://www.avax.network/'
 }
 
 export const tokenAvalanche: Token = {

@@ -10,10 +10,12 @@ import { tokenZcash } from "./zcash";
 import { tokenFilecoin } from "./filecoin";
 import { tokenStacks } from "./stacks";
 import { tokenKadena } from "./kadena";
+import { tokenAlgorand } from "./algorand";
 
 export const allTokens = [
   tokenEther,
   tokenBitcoin,
+  tokenAlgorand,
   tokenAvalanche,
   tokenChainlink,
   tokenCelo,

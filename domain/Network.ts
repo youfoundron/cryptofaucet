@@ -1,6 +1,7 @@
 import { Data } from './Data';
 
 export type NetworkId = 
+  | 'algorand-testnet'
   | 'avalanche-fuji'
   | 'bitcoin-testnet'
   | 'celo-alfajores'

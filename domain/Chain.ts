@@ -2,6 +2,7 @@ import { Data } from './Data';
 import { NetworkId } from './Network';
 
 export type ChainId = 
+  | 'algorand'
   | 'avalanche'
   | 'bitcoin'
   | 'celo-network'

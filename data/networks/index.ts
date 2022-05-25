@@ -1,5 +1,12 @@
 import { Network } from '../../domain/Network'
 
+export const networkAlgorandTestnet: Network = {
+  type: 'network',
+  id: 'algorand-testnet',
+  title: 'Algorand Testnet',
+  blockExplorer: 'https://testnet.algoexplorer.io/',
+}
+
 export const networkAvalancheFuji: Network = {
   type: 'network',
   id: 'avalanche-fuji',
@@ -113,6 +120,7 @@ export const networkZcashTestnet: Network = {
 }
 
 export const allNetworks = [
+  networkAlgorandTestnet,
   networkAvalancheFuji,
   networkBitcoinTestnet,
   networkCeloAlfajores,

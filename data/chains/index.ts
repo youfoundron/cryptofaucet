@@ -1,5 +1,15 @@
 import { Chain } from "../../domain/Chain"
 
+export const chainAlgorand: Chain = {
+  type: 'chain',
+  id: 'algorand',
+  title: 'Algorand',
+  documentationWebsite: 'https://developer.algorand.org/docs/',
+  networkIds: [
+    'algorand-testnet'
+  ]
+}
+
 export const chainAvalanche: Chain = {
   type: 'chain',
   id: 'avalanche',
@@ -98,6 +108,8 @@ export const chainZcash: Chain = {
 }
 
 export const allChains = [
+  chainAlgorand,
+  chainAvalanche,
   chainBitcoin,
   chainCelo,
   chainEthereum,
