@@ -46,7 +46,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
           <div className="py-2">
             {tokenNetworkIds.length > 1 && (<dt className="w-full flex flex-col justify-center items-center space-y-2">
               <span className="text-sm font-medium text-gray-500">
-                🚰 Faucets by network
+                🚰 Faucets by test network
               </span>
               <span className='flex flex-row space-x-2 items-center'>
                 {tokenNetworkIds.map((networkId) => {
