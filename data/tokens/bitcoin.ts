@@ -43,10 +43,10 @@ export const tokenBitcoin: Token = {
   logoPath: '/logos/bitcoin-btc-logo.svg',
   symbol: 'BTC',
   faucets: [
-    faucetMempoolco,
-    faucetKuttler,
-    faucetUO1,
+    faucetBitaps,
     faucetCoin,
-    faucetBitaps
+    faucetKuttler,
+    faucetMempoolco,
+    faucetUO1,
   ]
 }
