@@ -35,6 +35,16 @@ export const chainEthereum: Chain = {
   ]
 }
 
+export const chainKadena: Chain = {
+  type: 'chain',
+  id: 'kadena',
+  title: 'Kadena',
+  documentationWebsite: 'https://docs.kadena.io/',
+  networkIds: [
+    'kadena-testnet'
+  ]
+}
+
 export const chainFilecoin: Chain = {
   type: 'chain',
   id: 'filecoin',
@@ -81,6 +91,7 @@ export const allChains = [
   chainBitcoin,
   chainCelo,
   chainEthereum,
+  chainKadena,
   chainPOA,
   chainStacks,
   chainZcash

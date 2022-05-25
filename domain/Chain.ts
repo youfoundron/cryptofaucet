@@ -6,6 +6,7 @@ export type ChainId =
   | 'celo-network'
   | 'ethereum' 
   | 'filecoin'
+  | 'kadena'
   | 'poa'
   | 'stacks'
   | 'zcash'

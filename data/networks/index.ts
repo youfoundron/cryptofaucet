@@ -76,6 +76,13 @@ export const networkPOASokol: Network = {
   blockExplorer: 'https://blockscout.com/poa/sokol',
 }
 
+export const networkKadenaTestnet: Network = {
+  type: 'network',
+  id: 'kadena-testnet',
+  title: 'Kadena Testnet',
+  blockExplorer: 'https://explorer.chainweb.com/testnet',
+}
+
 export const networkStacksTestnet: Network = {
   type: 'network',
   id: 'stacks-testnet',
@@ -101,6 +108,7 @@ export const allNetworks = [
   networkEthereumSepolia,
   networkFilecoinCalibration,
   networkPOASokol,
+  networkKadenaTestnet,
   networkStacksTestnet,
   networkZcashTestnet
 ]

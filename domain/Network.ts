@@ -10,6 +10,7 @@ export type NetworkId =
   | 'ethereum-sepolia'
   | 'filecoin-calibration'
   | 'poa-sokol'
+  | 'kadena-testnet'
   | 'stacks-testnet'
   | 'zcash-testnet'
 

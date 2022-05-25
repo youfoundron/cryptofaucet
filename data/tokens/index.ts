@@ -8,6 +8,7 @@ import { tokenPOA } from "./poa";
 import { tokenZcash } from "./zcash";
 import { tokenFilecoin } from "./filecoin";
 import { tokenStacks } from "./stacks";
+import { tokenKadena } from "./kadena";
 
 export const allTokens = [
   tokenEther,
@@ -18,6 +19,7 @@ export const allTokens = [
   // tokenCeloEuro,
   // tokenCeloDollar,
   // tokenPOA,
+  tokenKadena,
   tokenStacks,
   tokenZcash
 ]
