@@ -1,0 +1,1 @@
+{"pageProps":{"token":{"type":"token","id":"avalanche","chainId":"avalanche","title":"Avalanche","logoPath":"/logos/avalanche-avax-logo.svg","symbol":"AVAX","faucets":[{"networkId":"avalanche-fuji","url":"https://faucet.avax.network/","maintainer":"Avalanche Foundation","maintainerWebsite":"https://www.avax.network/"}]}},"__N_SSG":true}

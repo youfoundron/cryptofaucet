@@ -1,0 +1,1 @@
+{"pageProps":{"token":{"type":"token","id":"algorand","chainId":"algorand","title":"Algorand","logoPath":"/logos/algorand-algo-logo.svg","symbol":"ALGO","faucets":[{"networkId":"algorand-testnet","url":"https://dispenser.testnet.aws.algodev.network/","maintainer":"Algorand Foundation","maintainerWebsite":"https://algorand.foundation/"}]}},"__N_SSG":true}
