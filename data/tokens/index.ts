@@ -1,3 +1,4 @@
+import { tokenAvalanche } from "./avalanche";
 import { tokenBitcoin } from "./bitcoin";
 import { tokenCelo } from "./celo";
 import { tokenCeloEuro } from "./celo-eur";
@@ -13,6 +14,7 @@ import { tokenKadena } from "./kadena";
 export const allTokens = [
   tokenEther,
   tokenBitcoin,
+  tokenAvalanche,
   tokenChainlink,
   tokenCelo,
   tokenFilecoin,

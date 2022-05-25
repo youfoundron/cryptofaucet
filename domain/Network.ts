@@ -1,6 +1,7 @@
 import { Data } from './Data';
 
 export type NetworkId = 
+  | 'avalanche-fuji'
   | 'bitcoin-testnet'
   | 'celo-alfajores'
   | 'ethereum-goerli'
@@ -14,9 +15,18 @@ export type NetworkId =
   | 'stacks-testnet'
   | 'zcash-testnet'
 
+type MetaMaskNetworkConfig = {
+  newRpcUrl: string;
+  chainId: number;
+  networkName?: string;
+  symbol?: string;
+  explorer?: string;
+}
+
 export interface Network extends Data {
   id: NetworkId;
   description?: string;
   officialWebsite?: string;
   blockExplorer?: string;
+  networkConfig?: MetaMaskNetworkConfig;
 }

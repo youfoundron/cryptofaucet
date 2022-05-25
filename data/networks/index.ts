@@ -1,5 +1,19 @@
 import { Network } from '../../domain/Network'
 
+export const networkAvalancheFuji: Network = {
+  type: 'network',
+  id: 'avalanche-fuji',
+  title: 'Fuji',
+  blockExplorer: 'https://testnet.snowtrace.io/',
+  networkConfig: {
+    networkName: 'Avalanche FUJI C-Chain',
+    newRpcUrl: 'https://api.avax-test.network/ext/bc/C/rpc',
+    chainId: 43113,
+    symbol: 'AVAX',
+    explorer: 'https://testnet.snowtrace.io/'
+  }
+}
+
 export const networkBitcoinTestnet: Network = {
   type: 'network',
   id: 'bitcoin-testnet',
@@ -99,6 +113,7 @@ export const networkZcashTestnet: Network = {
 }
 
 export const allNetworks = [
+  networkAvalancheFuji,
   networkBitcoinTestnet,
   networkCeloAlfajores,
   networkEthereumGoerli,

@@ -1,5 +1,15 @@
 import { Chain } from "../../domain/Chain"
 
+export const chainAvalanche: Chain = {
+  type: 'chain',
+  id: 'avalanche',
+  title: 'Avalanche',
+  documentationWebsite: 'https://docs.avax.network/',
+  networkIds: [
+    'avalanche-fuji',
+  ]
+}
+
 export const chainBitcoin: Chain = {
   type: 'chain',
   id: 'bitcoin',
