@@ -97,11 +97,19 @@ const HomePage: React.FC = () => {
           </div>
         </section>
       </main>
-      <footer className="flex justify-center py-4">
-        Made with ⚡ by&nbsp;
-        <a className="underline" href="https://youfoundron.com">
-          @youfoundron
-        </a>
+      <footer className="flex flex-col items-center after:justify-center py-4">
+        <span>
+          Made with ⚡ by&nbsp;
+          <a className="underline" href="https://youfoundron.com">
+            @youfoundron
+          </a>
+        </span>
+        <span>
+          Designed with 🐛 by&nbsp;
+          <a className="underline" href="https://github.com/isabellecharaf">
+            @isabellecharaf
+          </a>
+        </span>
       </footer>
     </div>
   );
