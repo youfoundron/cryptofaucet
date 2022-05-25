@@ -9,7 +9,7 @@ import { populateToken } from "../data/reducers";
 
 const allPopulatedTokens = allTokens.map(populateToken);
 
-const fuse = new Fuse(allPopulatedTokens, { keys: ["title", "symbol", "chain.title", "networks.title"] });
+const fuse = new Fuse(allPopulatedTokens, { keys: ["title", "description", "symbol", "chain.title", "networks.title"] });
 
 const HomePage: React.FC = () => {
   const [showBanner, setShowBanner] = useState<boolean>(true);
