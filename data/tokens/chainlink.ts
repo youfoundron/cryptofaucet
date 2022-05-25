@@ -31,6 +31,7 @@ export const tokenChainlink: Token = {
   logoPath: '/logos/chainlink-link-logo.svg',
   title: 'Chainlink',
   symbol: 'LINK',
+  documentationWebsite: 'https://docs.chain.link/',
   faucets: [
     faucetRopstenChainlink,
     faucetKovanChainlink,

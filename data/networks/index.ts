@@ -11,6 +11,7 @@ export const networkAvalancheFuji: Network = {
   type: 'network',
   id: 'avalanche-fuji',
   title: 'Fuji',
+  description: "Fuji is the Avalanche network's test network",
   blockExplorer: 'https://testnet.snowtrace.io/',
   networkConfig: {
     networkName: 'Avalanche FUJI C-Chain',
