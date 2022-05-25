@@ -6,8 +6,13 @@ export interface ResultCardProps {
   title: string;
   description?: string;
   cta?: {
-    url: string;
+    type: 'link';
     label: string;
+    url: string;
+  } | {
+    type: 'button';
+    label: string;
+    onClick: () => void;
   };
 }
 
@@ -36,11 +41,22 @@ export const ResultCard: React.FC<ResultCardProps> = ({
         </div>
         {cta && (
           <div className="ml-4 mt-4 flex-shrink-0">
-            <Link href={cta.url}>
-              <a className="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                {cta.label}
-              </a>
-            </Link>
+            {cta.type === 'link'
+              ? (
+                <Link href={cta.url}>
+                  <a className="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {cta.label}
+                  </a>
+                </Link>
+              ) : (
+                <button
+                  onClick={cta.onClick}
+                  className="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  {cta.label}
+                </button>
+              )
+            }
           </div>
         )}
       </div>

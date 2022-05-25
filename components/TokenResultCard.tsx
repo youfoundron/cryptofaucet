@@ -10,9 +10,13 @@ import { Faucet } from "../domain/Faucet";
 
 export interface TokenResultCardProps {
   token: TokenPopulated;
+  initialIsShowingFaucets?: boolean;
 }
 
-export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {  
+export const TokenResultCard: React.FC<TokenResultCardProps> = ({
+  token,
+  initialIsShowingFaucets = false
+}) => {  
   const logo = token.logoPath && (
     <img
       src={token.logoPath}
@@ -34,14 +38,21 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
       setSelectedNetworkIds(prev => new Set(prev.add(networkId)))
     }
   }
+
+  const [isShowingFaucets, setIsShowingFaucets] = useState<boolean>(initialIsShowingFaucets);
   
   return (
     <ResultCard
       logo={logo}
       title={`${token.title} (${token.symbol})`}
       description={token.description}
+      cta={{
+        type: 'button',
+        label: isShowingFaucets ? 'Hide faucets' : 'Show faucets',
+        onClick: () => setIsShowingFaucets(!isShowingFaucets)
+      }}
     >
-      <div className="border-t border-gray-200 px-0 py-2 mt-4 prose prose-indigo">
+      {isShowingFaucets && (<div className="border-t border-gray-200 px-0 py-2 mt-4 prose prose-indigo">
         <dl className="sm:divide-y sm:divide-gray-200">
           <div className="py-2">
             {tokenNetworkIds.length > 1 && (<dt className="w-full flex flex-col justify-center items-center space-y-2">
@@ -125,7 +136,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
             </dd>
           </div>
         </dl>
-      </div>
+      </div>)}
     </ResultCard>
   );
 };

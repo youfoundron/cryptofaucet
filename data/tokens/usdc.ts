@@ -24,7 +24,7 @@ export const tokenUsdc: Token = {
   id: 'usdc',
   chainId: 'ethereum',
   title: 'USD Coin',
-  description: '',
+  description: 'A fully collateralized US Dollar stablecoin',
   logoPath: '/logos/usd-coin-usdc-logo.svg',
   symbol: 'USDC',
   documentationWebsite: 'https://developers.circle.com/docs/what-is-usdc',

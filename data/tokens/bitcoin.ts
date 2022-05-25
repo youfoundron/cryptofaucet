@@ -40,6 +40,7 @@ export const tokenBitcoin: Token = {
   id: 'btc',
   chainId: 'bitcoin',
   title: 'Bitcoin',
+  description: 'A peer-to-peer electronic cash system',
   logoPath: '/logos/bitcoin-btc-logo.svg',
   symbol: 'BTC',
   faucets: [
