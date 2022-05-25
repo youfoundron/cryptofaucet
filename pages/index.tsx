@@ -99,13 +99,13 @@ const HomePage: React.FC = () => {
       </main>
       <footer className="flex flex-col items-center after:justify-center py-4">
         <span>
-          Made with ⚡ by&nbsp;
+          Built with ⚡ by&nbsp;
           <a className="underline" href="https://youfoundron.com">
             @youfoundron
           </a>
         </span>
         <span>
-          Designed with 🐛 by&nbsp;
+          Designed with 🌸 by&nbsp;
           <a className="underline" href="https://github.com/isabellecharaf">
             @isabellecharaf
           </a>
