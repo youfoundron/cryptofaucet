@@ -104,6 +104,13 @@ export const networkKadenaTestnet: Network = {
   blockExplorer: 'https://explorer.chainweb.com/testnet',
 }
 
+export const networkSolanaTestnet: Network = {
+  type: 'network',
+  id: 'solana-testnet',
+  title: 'Solana Testnet',
+  blockExplorer: 'https://explorer.solana.com/?cluster=testnet'
+}
+
 export const networkStacksTestnet: Network = {
   type: 'network',
   id: 'stacks-testnet',
@@ -132,6 +139,7 @@ export const allNetworks = [
   networkFilecoinCalibration,
   networkPOASokol,
   networkKadenaTestnet,
+  networkSolanaTestnet,
   networkStacksTestnet,
   networkZcashTestnet
 ]

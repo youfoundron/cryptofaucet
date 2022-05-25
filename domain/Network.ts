@@ -13,6 +13,7 @@ export type NetworkId =
   | 'filecoin-calibration'
   | 'poa-sokol'
   | 'kadena-testnet'
+  | 'solana-testnet'
   | 'stacks-testnet'
   | 'zcash-testnet'
 

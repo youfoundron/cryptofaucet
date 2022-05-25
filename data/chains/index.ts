@@ -86,6 +86,16 @@ export const chainPOA: Chain = {
   ]
 }
 
+export const chainSolana: Chain = {
+  type: 'chain',
+  id: 'solana',
+  title: 'Solana',
+  documentationWebsite: 'https://docs.solana.com',
+  networkIds: [
+    'solana-testnet'
+  ]
+}
+
 export const chainStacks: Chain = {
   type: 'chain',
   id: 'stacks',
@@ -115,6 +125,7 @@ export const allChains = [
   chainEthereum,
   chainKadena,
   chainPOA,
+  chainSolana,
   chainStacks,
   chainZcash
 ]

@@ -10,6 +10,7 @@ export type ChainId =
   | 'filecoin'
   | 'kadena'
   | 'poa'
+  | 'solana'
   | 'stacks'
   | 'zcash'
 
