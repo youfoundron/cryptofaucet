@@ -105,7 +105,7 @@ const HomePage: React.FC = () => {
           </a>
         </span>
         <span>
-          Designed with 🌸 by&nbsp;
+          Designed with 🌼 by&nbsp;
           <a className="underline" href="https://github.com/isabellecharaf">
             @isabellecharaf
           </a>
