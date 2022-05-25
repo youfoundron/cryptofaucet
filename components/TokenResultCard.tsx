@@ -73,7 +73,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
               </span>
             </dt>)}
             <dd className="mt-4 text-sm text-gray-900 space-x-2">
-              <div>
+              <div className="divide-y">
               {[...selectedNetworkIds.values()].map((networkId) => {
                 const faucets = faucetsByNetwork[networkId as NetworkId] as Faucet[];
                 const network = findNetworkById(networkId as NetworkId);
@@ -82,28 +82,30 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({ token }) => {
                 return (
                   <div key={networkId} className='ml-0'>
                     <div className='flex justify-between'>
-                      <div className="flex flex-col justify-start space-y-0">
+                      <div className="w-full flex flex-col justify-start space-y-0">
                         <span className="space-x-1">
-                          <label className="text-lg font-semibold">{network.title}</label>
-                        {showNetworkLink && (
+                          <div className='flex justify-between'>
+                            <label className="text-lg font-semibold">{network.title}</label>
+                            <div className='flex justify-end space-x-2'>
+                              {network.officialWebsite && (
+                                <a className='flex justify-start items-center' href={network.officialWebsite} target='_blank' rel="noreferrer">
+                                  Website <ExternalLinkIcon className="h-4 w-5"/>
+                                </a>
+                              )}
+                              {network.blockExplorer && (
+                                <a className='flex justify-start items-center' href={network.blockExplorer} target='_blank' rel="noreferrer">
+                                  Explorer <ExternalLinkIcon className="h-4 w-5 "/>
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        {/* {showNetworkLink && (
                           <Link href={`/networks/${networkId}`}>
                             <a className='text-xs'>view all tokens</a>
                           </Link>
-                        )}
+                        )} */}
                         </span>
                         {network.description && (<p>{network.description}</p>)}
-                      </div>
-                      <div className='flex justify-end space-x-2'>
-                        {network.officialWebsite && (
-                          <a className='flex justify-start items-center' href={network.officialWebsite} target='_blank' rel="noreferrer">
-                            Website <ExternalLinkIcon className="h-4 w-5"/>
-                          </a>
-                        )}
-                        {network.blockExplorer && (
-                          <a className='flex justify-start items-center' href={network.blockExplorer} target='_blank' rel="noreferrer">
-                            Explorer <ExternalLinkIcon className="h-4 w-5 "/>
-                          </a>
-                        )}
                       </div>
                     </div>
                     <ul className="list">
