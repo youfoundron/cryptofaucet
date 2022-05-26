@@ -9,9 +9,6 @@ const faucetFujiAvalanche: Faucet = {
 }
 
 export const tokenAvalanche: Token = {
-  type: 'token',
-  id: 'avalanche',
-  chainId: 'avalanche',
   title: 'Avalanche',
   logoPath: '/logos/avalanche-avax-logo.svg',
   symbol: 'AVAX',

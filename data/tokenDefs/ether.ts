@@ -128,9 +128,6 @@ const faucetSepoliaEth: Faucet = {
 }
 
 export const tokenEther: Token = {
-  type: 'token',
-  id: 'eth',
-  chainId: 'ethereum',
   logoPath: '/logos/ethereum-eth-logo.svg',
   title: 'Ether',
   description: 'The native token of the Ethereum network',

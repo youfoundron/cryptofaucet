@@ -1,22 +1,7 @@
-import { Data } from './Data';
+import { data as networkData } from '../data/networks';
+import { Chain, ChainId } from './Chain';
 
-export type NetworkId = 
-  | 'algorand-testnet'
-  | 'avalanche-fuji'
-  | 'bitcoin-testnet'
-  | 'celo-alfajores'
-  | 'ethereum-goerli'
-  | 'ethereum-kovan'
-  | 'ethereum-ropsten'
-  | 'ethereum-rinkeby'
-  | 'ethereum-sepolia'
-  | 'filecoin-calibration'
-  | 'poa-sokol'
-  | 'kadena-testnet'
-  | 'solana-testnet'
-  | 'stacks-testnet'
-  | 'xrp-testnet'
-  | 'zcash-testnet'
+export type NetworkId = keyof typeof networkData;
 
 type MetaMaskNetworkConfig = {
   newRpcUrl: string;
@@ -26,10 +11,15 @@ type MetaMaskNetworkConfig = {
   explorer?: string;
 }
 
-export interface Network extends Data {
-  id: NetworkId;
+export interface Network {
+  name: string;
+  chainId: ChainId;
   description?: string;
   officialWebsite?: string;
   blockExplorer?: string;
   networkConfig?: MetaMaskNetworkConfig;
+}
+
+export interface NetworkPopulated extends Network {
+  chain: Chain
 }

@@ -1,18 +1,19 @@
-import { Chain, ChainId } from './Chain';
-import { Data } from './Data';
-import { Faucet, FaucetPopulated } from './Faucet';
+import { data as tokensData } from '../data/tokens';
+import { Faucet } from './Faucet';
 import { Network } from './Network';
 
-export interface Token extends Data {
-  chainId: ChainId;
-  description?: string;
+export type TokenId = keyof typeof tokensData;
+
+export interface Token {
+  title: string;
   symbol: string;
   faucets: Faucet[];
   logoPath?: string;
+  description?: string;
   documentationWebsite?: string;
 }
 
 export interface TokenPopulated extends Token {
-  chain: Chain;
+  id: TokenId;
   networks: Network[];
 }

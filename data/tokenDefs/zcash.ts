@@ -16,9 +16,6 @@ const faucetZecpages: Faucet = {
 }
 
 export const tokenZcash: Token = {
-  type: 'token',
-  id: 'zec',
-  chainId: 'zcash',
   logoPath: '/logos/zcash-zec-logo.svg',
   title: 'Zcash',
   symbol: 'ZEC',

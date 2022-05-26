@@ -1,23 +1,9 @@
-import { Data } from './Data';
-import { NetworkId } from './Network';
+import { data as chainData } from '../data/chains';
 
-export type ChainId = 
-  | 'algorand'
-  | 'avalanche'
-  | 'bitcoin'
-  | 'celo-network'
-  | 'ethereum' 
-  | 'filecoin'
-  | 'kadena'
-  | 'poa'
-  | 'solana'
-  | 'stacks'
-  | 'xrp-ledger'
-  | 'zcash'
+export type ChainId = keyof typeof chainData;
 
-export interface Chain extends Data {
-  id: ChainId;
+export interface Chain {
+  name: string;
   description?: string;
   documentationWebsite?: string;
-  networkIds: NetworkId[];
 }

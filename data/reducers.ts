@@ -1,18 +1,32 @@
-import { Chain } from "../domain/Chain";
 import { Faucet } from "../domain/Faucet";
-import { NetworkId, Network } from "../domain/Network";
-import { Token, TokenPopulated } from "../domain/Token";
-import allChains from "./chains";
-import allNetworks, { networkPOASokol } from "./networks";
-import allTokens from "./tokens";
+import { NetworkId, Network, NetworkPopulated } from "../domain/Network";
+import { Token, TokenId, TokenPopulated } from "../domain/Token";
+import { chainsById } from "./chains";
+import { allNetworks, networksById } from "./networks";
+import { allTokens } from "./tokens";
 
-export const populateToken = (token: Token): TokenPopulated => {
-  const result: Partial<TokenPopulated> = Object.assign({}, token);
-  const tokenChainId = token.chainId;
-  const tokenNetworkIds = token.faucets.map(faucet => faucet.networkId);
-  result.chain = allChains.find(chain => chain.id === tokenChainId) as Chain;
-  result.networks = allNetworks.filter(network => tokenNetworkIds.includes(network.id)) as Network[];
-  return result as TokenPopulated;
+export const populateNetwork = (networkWithId: Network & { id: NetworkId }): NetworkPopulated => ({
+  chain: chainsById[networkWithId.chainId],
+  ...networkWithId,
+})
+
+export const populateToken = (tokenWithId: Token & { id: TokenId }): TokenPopulated => ({
+  networks: tokenWithId.faucets.map(({ networkId }) => populateNetwork({
+    id: networkId,
+    ...networksById[networkId]
+  })),
+  ...tokenWithId,
+})
+
+export const getTokenNetworkIds = (token: Token): NetworkId[] => {
+  return token.faucets.reduce<NetworkId[]>(
+    (networkIds, faucet) => {
+      if (!networkIds.includes(faucet.networkId)) {
+        networkIds.push(faucet.networkId);
+      }
+      return networkIds;
+    }, []
+  );
 }
 
 type FaucetsByNetworkId = Partial<Record<NetworkId, Faucet[]>>

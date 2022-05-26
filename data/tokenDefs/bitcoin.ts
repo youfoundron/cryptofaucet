@@ -36,9 +36,6 @@ const faucetBitaps: Faucet = {
 }
 
 export const tokenBitcoin: Token = {
-  type: 'token',
-  id: 'btc',
-  chainId: 'bitcoin',
   title: 'Bitcoin',
   description: 'A peer-to-peer electronic cash system',
   logoPath: '/logos/bitcoin-btc-logo.svg',

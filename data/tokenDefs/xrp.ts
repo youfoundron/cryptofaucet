@@ -9,9 +9,6 @@ const faucetTestnetXrp: Faucet = {
 }
 
 export const tokenXrp: Token = {
-  type: 'token',
-  id: 'xrp',
-  chainId: 'xrp-ledger',
   title: 'XRP Ledger',
   description: 'Formerly known as Ripple',
   logoPath: '/logos/xrp-xrp-logo.svg',

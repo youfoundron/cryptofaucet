@@ -20,9 +20,6 @@ const faucetSolanaTestnetUsdc: Faucet = {
 }
 
 export const tokenUsdc: Token = {
-  type: 'token',
-  id: 'usdc',
-  chainId: 'ethereum',
   title: 'USD Coin',
   description: 'A fully collateralized US Dollar stablecoin',
   logoPath: '/logos/usd-coin-usdc-logo.svg',

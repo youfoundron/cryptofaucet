@@ -9,9 +9,6 @@ const faucetTestnetAlgorand: Faucet = {
 }
 
 export const tokenAlgorand: Token = {
-  type: 'token',
-  id: 'algorand',
-  chainId: 'algorand',
   title: 'Algorand',
   logoPath: '/logos/algorand-algo-logo.svg',
   symbol: 'ALGO',

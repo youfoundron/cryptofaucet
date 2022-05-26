@@ -16,9 +16,6 @@ const faucetTestnetSolanaTools: Faucet = {
 }
 
 export const tokenSolana: Token = {
-  type: 'token',
-  id: 'solana',
-  chainId: 'solana',
   title: 'Solana',
   logoPath: '/logos/solana-sol-logo.svg',
   symbol: 'SOL',

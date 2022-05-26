@@ -9,9 +9,6 @@ const faucetTestnetKadena: Faucet = {
 }
 
 export const tokenKadena: Token = {
-  type: 'token',
-  id: 'kadena',
-  chainId: 'kadena',
   title: 'Kadena',
   logoPath: '/logos/kadena-kda-logo.svg',
   symbol: 'KDA',

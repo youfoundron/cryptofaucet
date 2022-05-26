@@ -25,11 +25,8 @@ const faucetRinkebyChainlink: Faucet = {
 }
 
 export const tokenChainlink: Token = {
-  type: 'token',
-  id: 'ropsten-link',
-  chainId: 'ethereum',
-  logoPath: '/logos/chainlink-link-logo.svg',
   title: 'Chainlink',
+  logoPath: '/logos/chainlink-link-logo.svg',
   symbol: 'LINK',
   documentationWebsite: 'https://docs.chain.link/',
   faucets: [

@@ -9,9 +9,6 @@ const faucetCalibrationFilecoin: Faucet = {
 }
 
 export const tokenFilecoin: Token = {
-  type: 'token',
-  id: 'filecoin',
-  chainId: 'filecoin',
   title: 'Filecoin',
   logoPath: '/logos/filecoin-fil-logo.svg',
   symbol: 'FIL',
