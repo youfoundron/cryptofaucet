@@ -37,14 +37,14 @@ export const data = {
     chainId: 'ethereum' as ChainId,
     description: "A cross-client proof-of-authority testing network for Ethereum",
     blockExplorer: "https://goerli.etherscan.io/",
-    officialWebsite: 'https://kovan-testnet.github.io/website/',
+    officialWebsite: "https://goerli.net/",
   },
   'ethereum-kovan': {
     name: "Kovan",
     chainId: 'ethereum' as ChainId,
     description: "Ethereum's PoA testnet, started by Parity",
     blockExplorer: 'https://kovan.etherscan.io/',
-    officialWebsite: "https://goerli.net/",
+    officialWebsite: 'https://kovan-testnet.github.io/website/',
   },
   'ethereum-rinkeby': {
     name: "Rinkeby",
