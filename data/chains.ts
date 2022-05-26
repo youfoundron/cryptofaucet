@@ -40,6 +40,10 @@ export const data = {
     name: 'Stacks Network',
     documentationWebsite: 'https://docs.stacks.co/',
   },
+  tezos: {
+    name: 'Tezos',
+    documentationWebsite: 'https://tezos.gitlab.io/',
+  },
   'xrp-ledger': {
     name: 'XRP Ledger',
     documentationWebsite: 'https://xrpl.org/docs.html',

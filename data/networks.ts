@@ -92,6 +92,11 @@ export const data = {
     chainId: 'xrp-ledger' as ChainId,
     blockExplorer: 'https://testnet.xrpl.org/'
   },
+  'tezos-ithacanet': {
+    name: 'Ithacanet',
+    chainId: 'tezos' as ChainId,
+    blockExplorer: 'https://ithacanet.tzkt.io/'
+  },
   'zcash-testnet': {
     name: 'Zcash Testnet',
     chainId: 'zcash' as ChainId,

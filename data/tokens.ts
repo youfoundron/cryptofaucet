@@ -9,6 +9,7 @@ import { tokenFilecoin } from "./tokenDefs/filecoin";
 import { tokenKadena } from "./tokenDefs/kadena";
 import { tokenSolana } from "./tokenDefs/solana";
 import { tokenStacks } from "./tokenDefs/stacks";
+import { tokenTezos } from "./tokenDefs/tezos";
 import { tokenUsdc } from "./tokenDefs/usdc";
 import { tokenXrp } from "./tokenDefs/xrp";
 import { tokenZcash } from "./tokenDefs/zcash";
@@ -24,6 +25,7 @@ export const data = {
   kda: tokenKadena,
   sol: tokenSolana,
   stx: tokenStacks,
+  xtz: tokenTezos,
   usdc: tokenUsdc,
   xrp: tokenXrp,
   zec: tokenZcash
