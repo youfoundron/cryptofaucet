@@ -41,10 +41,6 @@ export const getFaucetsByNetwork = (faucets: Faucet[]) => {
   }, {})
 }
 
-export const findNetworkById = (networkId: NetworkId): Network => {
-  return allNetworks.find(network => network.id == networkId) as Network;
-}
-
 export const networkHasMultipleTokens = (networkId: NetworkId): boolean => {
   let numTokensWithNetworkId = 0;
   for (const token of allTokens) {
