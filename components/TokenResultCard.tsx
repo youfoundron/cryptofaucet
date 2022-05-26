@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
-import Link from "next/link";
 import { NetworkId } from "../domain/Network";
 import { TokenPopulated } from "../domain/Token";
 import { ResultCard } from "./ResultCard";
-import { findNetworkById, getFaucetsByNetwork, networkHasMultipleTokens } from "../data/reducers";
+import {  getFaucetsByNetwork, getTokenNetworkIds, networkHasMultipleTokens } from "../data/reducers";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 import { Faucet } from "../domain/Faucet";
+import { networksById } from "../data/networks";
 
 export interface TokenResultCardProps {
   token: TokenPopulated;
@@ -25,8 +25,10 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
     />
   );
   
-  const tokenNetworkIds = token.networks.map(network => network.id);
+  const tokenNetworkIds = getTokenNetworkIds(token);
   const faucetsByNetwork = getFaucetsByNetwork(token.faucets);
+  const numNetworks = tokenNetworkIds.length;
+  const numFaucets = Object.values(faucetsByNetwork).flatMap(faucets => faucets).length;
   
   const [selectedNetworkIds, setSelectedNetworkIds] = useState<Set<NetworkId>>(new Set(tokenNetworkIds.slice(0, 1)))
   const handleNetworkToggle = (networkId: NetworkId) => {
@@ -45,10 +47,16 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
     <ResultCard
       logo={logo}
       title={`${token.title} (${token.symbol})`}
-      description={token.description}
+      description={
+        (`${numFaucets} faucet${numFaucets > 1 ? 's' : ''}`).concat(
+          numNetworks > 1
+            ? ` on ${numNetworks} test networks`
+            : ''
+        )
+      }
       cta={{
         type: 'button',
-        label: isShowingFaucets ? 'Hide faucets' : 'Show faucets',
+        label: `${isShowingFaucets ? 'Hide' : 'Show'} faucet${numFaucets > 1 ? 's' : ''}`,
         onClick: () => setIsShowingFaucets(!isShowingFaucets)
       }}
     >
@@ -61,7 +69,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
               </span>
               <span className='flex flex-row space-x-2 items-center'>
                 {tokenNetworkIds.map((networkId) => {
-                  const network = findNetworkById(networkId);
+                  const network = networksById[networkId];
                   const checkId = `show-${token.id}-${networkId}`;
 
                   return (
@@ -76,7 +84,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
                       />
                       <label
                         htmlFor={checkId}
-                        className="cursor-pointer group-hover:underline text-sm">{network.title}
+                        className="cursor-pointer group-hover:underline text-sm">{network.name}
                       </label>
                     </div>
                   )
@@ -85,9 +93,9 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
             </dt>)}
             <dd className="mt-4 text-sm text-gray-900 space-x-2">
               <div className="divide-y">
-              {[...selectedNetworkIds.values()].map((networkId) => {
-                const faucets = faucetsByNetwork[networkId as NetworkId] as Faucet[];
-                const network = findNetworkById(networkId as NetworkId);
+              {[...selectedNetworkIds].map((networkId: NetworkId) => {
+                const faucets = faucetsByNetwork[networkId] as Faucet[];
+                const network = networksById[networkId];
                 const showNetworkLink = networkHasMultipleTokens(networkId as NetworkId);
                 
                 return (
@@ -96,7 +104,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
                       <div className="w-full flex flex-col justify-start space-y-0">
                         <span className="space-x-1">
                           <div className='flex justify-between'>
-                            <label className="text-lg font-semibold">{network.title}</label>
+                            <label className="text-lg font-semibold">{network.name}</label>
                             <div className='flex justify-end space-x-2'>
                               {network.officialWebsite && (
                                 <a className='flex justify-start items-center' href={network.officialWebsite} target='_blank' rel="noreferrer">

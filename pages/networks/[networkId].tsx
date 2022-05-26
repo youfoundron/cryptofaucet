@@ -8,7 +8,7 @@ import {
 export const NetworkPage: React.FC<{ network: Network }> = ({ network }) => {
   return (
     <div>
-      <h1>Network: {network.title}</h1>
+      <h1>Network: {network.name}</h1>
       <p>WIP...</p>
     </div>
   );

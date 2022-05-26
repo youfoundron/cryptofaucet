@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import Fuse from "fuse.js";
 import Head from "next/head";
 import { XIcon } from "@heroicons/react/outline";
-import allTokens from '../data/tokens'
-import { Token, TokenPopulated } from "../domain/Token";
+import { allTokens } from '../data/tokens'
+import { TokenPopulated } from "../domain/Token";
 import { TokenResultCard } from "../components/TokenResultCard";
 import { populateToken } from "../data/reducers";
 
-const allPopulatedTokens = allTokens.map(populateToken);
+const allPopulatedTokens = allTokens.map(t => ({ ...t, ...populateToken(t) }));
 
-const fuse = new Fuse(allPopulatedTokens, { keys: ["title", "description", "symbol", "chain.title", "networks.title"] });
+const fuse = new Fuse(allPopulatedTokens, { keys: ["title", "description", "symbol", "chain.name", "networks.name"] });
 
 const HomePage: React.FC = () => {
   const [showBanner, setShowBanner] = useState<boolean>(true);
@@ -39,11 +39,8 @@ const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
             <div className="pr-16 sm:text-center sm:px-16">
               <p className="font-medium text-white">
-                <span className="md:hidden">
-                  {`Can't find what you're looking for?`}
-                </span>
-                <span className="hidden md:inline">
-                  {`Can't find what you're looking for? Tell us what you need.`}
+                <span>
+                  {"Can't find what you're looking for?"}
                 </span>
                 <span className="block sm:ml-2 sm:inline-block">
                   <a
@@ -51,7 +48,7 @@ const HomePage: React.FC = () => {
                     href='https://github.com/youfoundron/cryptofaucet/issues/new?assignees=youfoundron&labels=faucet+request&template=new_faucet_request.yml&title=%5BFaucet+Request%5D%3A+'
                     target='_blank' rel="noreferrer"
                   >
-                    Click here <span aria-hidden="true">&rarr;</span>
+                    Tell us here <span aria-hidden="true">&rarr;</span>
                   </a>
                 </span>
               </p>

@@ -8,7 +8,7 @@ import {
 export const ChainPage: React.FC<{ chain: Chain }> = ({ chain }) => {
   return (
     <div>
-      <h1>Chain: {chain.title}</h1>
+      <h1>Chain: {chain.name}</h1>
       <p>WIP...</p>
     </div>
   );

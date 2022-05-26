@@ -1,10 +1,10 @@
 // import { chains, networks, tokens } from "../data"
-import chains from '../data/chains';
-import networks from '../data/networks';
-import tokens from '../data/tokens';
-import { Chain } from "../domain/Chain";
-import { Network } from "../domain/Network";
-import { Token } from "../domain/Token";
+import { allChains } from '../data/chains';
+import { allNetworks } from '../data/networks';
+import { allTokens } from '../data/tokens';
+import { Chain, ChainId } from "../domain/Chain";
+import { Network, NetworkId } from "../domain/Network";
+import { Token, TokenId } from "../domain/Token";
 
 type DataType = Chain | Network | Token;
 enum Slug {
@@ -55,10 +55,10 @@ function getStaticPropsFactory<T extends DataType>(slug: Slug, dataKey: keyof T,
   }
 }
 
-export const getStaticPathsOffChainId = getStaticPathsFactory<Chain>(Slug.chainId, 'id', chains);
-export const getStaticPathsOffNetworkId = getStaticPathsFactory<Network>(Slug.networkId, 'id', networks);
-export const getStaticPathsOffTokenId = getStaticPathsFactory<Token>(Slug.tokenId, 'id', tokens);
+export const getStaticPathsOffChainId = getStaticPathsFactory<Chain & { id: ChainId }>(Slug.chainId, 'id', allChains);
+export const getStaticPathsOffNetworkId = getStaticPathsFactory<Network & { id: NetworkId }>(Slug.networkId, 'id', allNetworks);
+export const getStaticPathsOffTokenId = getStaticPathsFactory<Token & { id: TokenId }>(Slug.tokenId, 'id', allTokens);
 
-export const getStaticPropsForChain = getStaticPropsFactory<Chain>(Slug.chainId, 'id', PropKey.chain, chains);
-export const getStaticPropsForNetwork = getStaticPropsFactory<Network>(Slug.networkId, 'id', PropKey.network, networks);
-export const getStaticPropsForToken = getStaticPropsFactory<Token>(Slug.tokenId, 'id', PropKey.token, tokens);
+export const getStaticPropsForChain = getStaticPropsFactory<Chain & { id: ChainId }>(Slug.chainId, 'id', PropKey.chain, allChains);
+export const getStaticPropsForNetwork = getStaticPropsFactory<Network & { id: NetworkId }>(Slug.networkId, 'id', PropKey.network, allNetworks);
+export const getStaticPropsForToken = getStaticPropsFactory<Token & { id: TokenId }>(Slug.tokenId, 'id', PropKey.token, allTokens);
