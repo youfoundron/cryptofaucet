@@ -1,1 +1,0 @@
-{"pageProps":{"token":{"type":"token","id":"stacks","chainId":"stacks","title":"Stacks","description":"Formerly known as Blockstack","logoPath":"/logos/stacks-stx-logo.svg","symbol":"STX","faucets":[{"networkId":"stacks-testnet","url":"https://explorer.stacks.co/sandbox/faucet?chain=testnet","maintainer":"Stacks.co","maintainerWebsite":"https://www.stacks.co/"}]}},"__N_SSG":true}
