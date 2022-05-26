@@ -28,6 +28,10 @@ export const data = {
     name: 'Filecoin',
     documentationWebsite: 'https://docs.filecoin.io/',
   },
+  flow: {
+    name: 'Flow',
+    documentationWebsite: 'https://docs.onflow.org/',
+  },
   kadena: {
     name: 'Kadena',
     documentationWebsite: 'https://docs.kadena.io/',

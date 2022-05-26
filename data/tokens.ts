@@ -6,6 +6,7 @@ import { tokenCelo } from "./tokenDefs/celo";
 import { tokenChainlink } from "./tokenDefs/chainlink";
 import { tokenEther } from "./tokenDefs/ether";
 import { tokenFilecoin } from "./tokenDefs/filecoin";
+import { tokenFlow } from "./tokenDefs/flow";
 import { tokenKadena } from "./tokenDefs/kadena";
 import { tokenSolana } from "./tokenDefs/solana";
 import { tokenStacks } from "./tokenDefs/stacks";
@@ -22,6 +23,7 @@ export const data = {
   celo: tokenCelo,
   link: tokenChainlink,
   fil: tokenFilecoin,
+  flow: tokenFlow,
   kda: tokenKadena,
   sol: tokenSolana,
   stx: tokenStacks,

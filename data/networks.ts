@@ -66,6 +66,11 @@ export const data = {
     blockExplorer: 'https://sepolia.etherscan.io/',
     officialWebsite: 'https://sepolia.dev/',
   },
+  'flow-testnet': {
+    name: 'Flow Testnet',
+    chainId: 'flow' as ChainId,
+    blockExplorer: 'https://docs.onflow.org/',
+  },
   'filecoin-calibration': {
     name: 'Calibration',
     chainId: 'filecoin' as ChainId,
