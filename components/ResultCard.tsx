@@ -24,7 +24,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({
   children,
 }) => {
   return (
-    <div className="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md">
+    <div className="bg-white shadow overflow-hidden px-4 py-3 sm:px-6 sm:rounded-md">
       <div className="-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap">
         <div className="ml-4 mt-4">
           <div className='flex flex-start justify-start items-center space-x-2'>

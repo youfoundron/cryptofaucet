@@ -133,12 +133,11 @@ export const tokenEther: Token = {
   description: 'The native token of the Ethereum network',
   symbol: 'ETH',
   faucets: [
-    // Ropsten
-    faucetRopstenEthDefiKaren,
-    faucetRopstenEthDimensionsNetwork,
-    faucetRopstenEthKomputing,
-    faucetRopstenEthParadigm,
-    faucetRopstenEthMetaMask,
+    // Görli
+    faucetGoerliEthAlchemy,
+    faucetGoerliEthChainlink,
+    faucetGoerliEthMuditGupta,
+    faucetGoerliEthParadigm,
     // Kovan
     faucetKovanEthChainlink,
     faucetKovanEthGitter,
@@ -149,11 +148,12 @@ export const tokenEther: Token = {
     faucetRinkebyEthChainlink,
     faucetRinkebyEthGeth,
     faucetRinkebyEthParadigm,
-    // Görli
-    faucetGoerliEthAlchemy,
-    faucetGoerliEthChainlink,
-    faucetGoerliEthMuditGupta,
-    faucetGoerliEthParadigm,
+    // Ropsten
+    faucetRopstenEthDefiKaren,
+    faucetRopstenEthDimensionsNetwork,
+    faucetRopstenEthKomputing,
+    faucetRopstenEthMetaMask,
+    faucetRopstenEthParadigm,
     // Sepolia
     faucetSepoliaEth,
   ]

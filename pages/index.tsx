@@ -85,10 +85,11 @@ const HomePage: React.FC = () => {
           </form>
 
           <div className="space-y-3 w-full max-w-2xl mx-auto">
-            {populatedTokens.map(pToken =>
+            {populatedTokens.map((pToken, i) =>
               <TokenResultCard
                 key={pToken.id}
                 token={pToken}
+                initialIsShowingFaucets={i === 0}
               />
             )}
           </div>

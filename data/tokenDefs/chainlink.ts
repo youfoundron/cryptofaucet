@@ -30,8 +30,8 @@ export const tokenChainlink: Token = {
   symbol: 'LINK',
   documentationWebsite: 'https://docs.chain.link/',
   faucets: [
-    faucetRopstenChainlink,
     faucetKovanChainlink,
-    faucetRinkebyChainlink
+    faucetRinkebyChainlink,
+    faucetRopstenChainlink,
   ]
 }
