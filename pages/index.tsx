@@ -2,27 +2,33 @@ import React, { useState, useEffect } from "react";
 import Fuse from "fuse.js";
 import Head from "next/head";
 import { XIcon } from "@heroicons/react/outline";
-import { allTokens } from '../data/tokens'
+import { allTokens } from "../data/tokens";
 import { TokenPopulated } from "../domain/Token";
 import { TokenResultCard } from "../components/TokenResultCard";
 import { populateToken } from "../data/reducers";
 
-const allPopulatedTokens = allTokens.map(t => ({ ...t, ...populateToken(t) }));
+const allPopulatedTokens = allTokens.map((t) => ({
+  ...t,
+  ...populateToken(t),
+}));
 
-const fuse = new Fuse(allPopulatedTokens, { keys: ["title", "description", "symbol", "chain.name", "networks.name"] });
+const fuse = new Fuse(allPopulatedTokens, {
+  keys: ["title", "description", "symbol", "chain.name", "networks.name"],
+});
 
 const HomePage: React.FC = () => {
   const [showBanner, setShowBanner] = useState<boolean>(true);
   const [query, setQuery] = useState<string>("");
-  const [searchResult, setSearchResult] = useState<Fuse.FuseResult<TokenPopulated>[]>(
-    []
-  );
+  const [searchResult, setSearchResult] = useState<
+    Fuse.FuseResult<TokenPopulated>[]
+  >([]);
 
   useEffect(() => setSearchResult(fuse.search(query)), [query]);
 
-  const populatedTokens = searchResult.length > 0
-    ? searchResult.map(({ item }) => item)
-    : allPopulatedTokens
+  const populatedTokens =
+    searchResult.length > 0
+      ? searchResult.map(({ item }) => item)
+      : allPopulatedTokens;
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
@@ -39,14 +45,13 @@ const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
             <div className="pr-16 sm:text-center sm:px-16">
               <p className="font-medium text-white">
-                <span>
-                  {"Can't find what you're looking for?"}
-                </span>
+                <span>{"Can't find what you're looking for?"}</span>
                 <span className="block sm:ml-2 sm:inline-block">
                   <a
                     className="text-white font-bold underline"
-                    href='https://github.com/youfoundron/cryptofaucet/issues/new?assignees=youfoundron&labels=faucet+request&template=new_faucet_request.yml&title=%5BFaucet+Request%5D%3A+'
-                    target='_blank' rel="noreferrer"
+                    href="https://github.com/youfoundron/cryptofaucet/issues/new?assignees=youfoundron&labels=faucet+request&template=new_faucet_request.yml&title=%5BFaucet+Request%5D%3A+"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     Tell us here <span aria-hidden="true">&rarr;</span>
                   </a>
@@ -85,13 +90,13 @@ const HomePage: React.FC = () => {
           </form>
 
           <div className="space-y-3 w-full max-w-2xl mx-auto">
-            {populatedTokens.map((pToken, i) =>
+            {populatedTokens.map((pToken, i) => (
               <TokenResultCard
                 key={pToken.id}
                 token={pToken}
                 initialIsShowingFaucets={i === 0}
               />
-            )}
+            ))}
           </div>
         </section>
       </main>

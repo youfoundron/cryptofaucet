@@ -8,7 +8,7 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\""
   },
   "dependencies": {
     "@typeform/embed-react": "^1.0.7",
