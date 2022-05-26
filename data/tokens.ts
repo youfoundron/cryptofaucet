@@ -1,4 +1,4 @@
-import { Token, TokenId } from "../domain/Token"
+import { Token, TokenId } from "../domain/Token";
 import { tokenAlgorand } from "./tokenDefs/algorand";
 import { tokenAvalanche } from "./tokenDefs/avalanche";
 import { tokenBitcoin } from "./tokenDefs/bitcoin";
@@ -30,10 +30,10 @@ export const data = {
   xtz: tokenTezos,
   usdc: tokenUsdc,
   xrp: tokenXrp,
-  zec: tokenZcash
+  zec: tokenZcash,
 };
 
 export const tokensById: Record<TokenId, Token> = data;
-export const allTokens: (Token & { id: TokenId })[] = (Object
-  .entries(tokensById) as [TokenId, Token][])
-  .map(([id, token]) => ({ id, ...token }))
+export const allTokens: (Token & { id: TokenId })[] = (
+  Object.entries(tokensById) as [TokenId, Token][]
+).map(([id, token]) => ({ id, ...token }));

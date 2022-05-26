@@ -1,4 +1,4 @@
-import { data as chainData } from '../data/chains';
+import { data as chainData } from "../data/chains";
 
 export type ChainId = keyof typeof chainData;
 

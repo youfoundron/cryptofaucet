@@ -1,5 +1,5 @@
-import { data as networkData } from '../data/networks';
-import { Chain, ChainId } from './Chain';
+import { data as networkData } from "../data/networks";
+import { Chain, ChainId } from "./Chain";
 
 export type NetworkId = keyof typeof networkData;
 
@@ -9,7 +9,7 @@ type MetaMaskNetworkConfig = {
   networkName?: string;
   symbol?: string;
   explorer?: string;
-}
+};
 
 export interface Network {
   name: string;
@@ -21,5 +21,5 @@ export interface Network {
 }
 
 export interface NetworkPopulated extends Network {
-  chain: Chain
+  chain: Chain;
 }

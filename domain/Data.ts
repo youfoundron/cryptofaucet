@@ -3,9 +3,9 @@ import { Network } from "./Network";
 import { Token } from "./Token";
 
 export enum DataType {
-  chain ='chain',
-  network = 'network',
-  token = 'token'
+  chain = "chain",
+  network = "network",
+  token = "token",
 }
 
 export interface Data {

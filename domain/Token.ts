@@ -1,6 +1,6 @@
-import { data as tokensData } from '../data/tokens';
-import { Faucet } from './Faucet';
-import { Network } from './Network';
+import { data as tokensData } from "../data/tokens";
+import { Faucet } from "./Faucet";
+import { Network } from "./Network";
 
 export type TokenId = keyof typeof tokensData;
 
