@@ -30,11 +30,11 @@ export const ResultCard: React.FC<ResultCardProps> = ({
           <div className='flex flex-start justify-start items-center space-x-2'>
             {logo}
             <div>              
-              <h3 className="text-lg leading-6 font-medium text-gray-900">
+              <h3 className="text-lg leading-5 font-medium text-gray-900">
                 {title}
               </h3>
               {description && (
-                <p className="mt-1 text-sm text-gray-500">{description}</p>
+                <p className="text-sm text-gray-500">{description}</p>
               )}
             </div>
           </div>
