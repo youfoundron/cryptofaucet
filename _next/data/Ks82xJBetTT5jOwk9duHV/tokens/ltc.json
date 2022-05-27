@@ -1,0 +1,1 @@
+{"pageProps":{"token":{"id":"ltc","title":"Litecoin","logoPath":"/logos/litecoin-ltc-logo.svg","symbol":"LTC","faucets":[{"networkId":"litecoin-testnet","url":"https://tltc.bitaps.com/","maintainer":"Bitaps","maintainerWebsite":"https://bitaps.com"},{"networkId":"litecoin-testnet","url":"https://testnet-faucet.com/ltc-testnet/","maintainer":"Testnet Faucet"}]}},"__N_SSG":true}
