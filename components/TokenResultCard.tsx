@@ -54,7 +54,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
       logo={logo}
       title={`${token.title} (${token.symbol})`}
       description={`${numFaucets} faucet${numFaucets > 1 ? "s" : ""}`.concat(
-        numNetworks > 1 ? ` on ${numNetworks} test networks` : ""
+        numNetworks > 1 ? ` on ${numNetworks} networks` : ""
       )}
       cta={{
         type: "button",

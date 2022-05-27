@@ -72,7 +72,7 @@ const HomePage: React.FC = () => {
         </div>
       )}
 
-      <main className="flex justify-center flex-1 pt-6">
+      <main className="flex justify-center flex-1 pt-6 mx-2 sm:mx-0">
         <section className="container flex flex-col space-y-6">
           <h2 className="text-center font-black text-5xl sm:text-6xl">
             Find a faucet!
