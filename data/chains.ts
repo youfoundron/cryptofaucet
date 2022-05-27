@@ -45,6 +45,14 @@ export const data = {
   litecoin: {
     name: "Litecoin",
   },
+  optimism: {
+    name: "Optimism",
+    documentationWebsite: "https://community.optimism.io/docs/developers/",
+  },
+  polygon: {
+    name: "Polygon",
+    documentationWebsite: "https://docs.polygon.technology/",
+  },
   solana: {
     name: "Solana",
     documentationWebsite: "https://docs.solana.com",

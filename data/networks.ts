@@ -7,6 +7,11 @@ export const data = {
     chainId: "algorand" as ChainId,
     blockExplorer: "https://testnet.algoexplorer.io/",
   },
+  "arbitrum-rinkeby": {
+    name: "Arbitrum Rinkeby",
+    chainId: "arbitrum" as ChainId,
+    blockExplorer: "https://testnet.arbiscan.io/",
+  },
   "avalanche-fuji": {
     name: "Fuji",
     chainId: "avalanche" as ChainId,
@@ -93,6 +98,23 @@ export const data = {
     name: "Litecoin Testnet",
     chainId: "litecoin" as ChainId,
     blockExplorer: "https://blockexplorer.one/litecoin/testnet",
+  },
+  "optimism-kovan": {
+    name: "Optimistic Kovan",
+    chainId: "optimism" as ChainId,
+    blockExplorer: "https://kovan-optimistic.etherscan.io",
+    networkConfig: {
+      networkName: "Optimism Kovan (testnet)",
+      newRpcUrl: "https://kovan.optimism.io",
+      chainId: 69,
+      symbol: "oETH",
+      explorer: "https://kovan-optimistic.etherscan.io",
+    },
+  },
+  "polygon-mumbai": {
+    name: "Polygon Mumbai",
+    chainId: "polygon" as ChainId,
+    blockExplorer: "https://mumbai.polygonscan.com/",
   },
   "solana-testnet": {
     name: "Solana Testnet",

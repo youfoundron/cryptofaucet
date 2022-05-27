@@ -4,16 +4,19 @@ import { tokenAvalanche } from "./tokenDefs/avalanche";
 import { tokenBitcoin } from "./tokenDefs/bitcoin";
 import { tokenCelo } from "./tokenDefs/celo";
 import { tokenChainlink } from "./tokenDefs/chainlink";
+import { tokenDai } from "./tokenDefs/dai";
 import { tokenDogecoin } from "./tokenDefs/dogecoin";
 import { tokenEther } from "./tokenDefs/ether";
 import { tokenFilecoin } from "./tokenDefs/filecoin";
 import { tokenFlow } from "./tokenDefs/flow";
 import { tokenKadena } from "./tokenDefs/kadena";
 import { tokenLitecoin } from "./tokenDefs/litecoin";
+import { tokenMatic } from "./tokenDefs/matic";
 import { tokenSolana } from "./tokenDefs/solana";
 import { tokenStacks } from "./tokenDefs/stacks";
 import { tokenTezos } from "./tokenDefs/tezos";
 import { tokenUsdc } from "./tokenDefs/usdc";
+import { tokenWeth } from "./tokenDefs/weth";
 import { tokenXrp } from "./tokenDefs/xrp";
 import { tokenZcash } from "./tokenDefs/zcash";
 
@@ -23,16 +26,19 @@ export const data = {
   algo: tokenAlgorand,
   avax: tokenAvalanche,
   celo: tokenCelo,
+  dai: tokenDai,
   doge: tokenDogecoin,
   link: tokenChainlink,
   fil: tokenFilecoin,
   flow: tokenFlow,
   kda: tokenKadena,
   ltc: tokenLitecoin,
+  matic: tokenMatic,
   sol: tokenSolana,
   stx: tokenStacks,
   xtz: tokenTezos,
   usdc: tokenUsdc,
+  weth: tokenWeth,
   xrp: tokenXrp,
   zec: tokenZcash,
 };

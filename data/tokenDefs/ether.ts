@@ -127,6 +127,33 @@ const faucetSepoliaEth: Faucet = {
   maintainerWebsite: "https://komputing.org/",
 };
 
+const faucetOptimismKovanEthOKF: Faucet = {
+  networkId: "optimism-kovan",
+  url: "https://optimismfaucet.xyz/",
+  maintainer: "Optimism Kovan Faucet",
+};
+
+const faucetOptimismKovanEthParadigm: Faucet = {
+  networkId: "optimism-kovan",
+  url: "https://faucet.paradigm.xyz/",
+  maintainer: "Paradigm",
+  maintainerWebsite: "https://www.paradigm.xyz/",
+};
+
+const faucetOptimismKovanEthPerpetual: Faucet = {
+  networkId: "optimism-kovan",
+  url: "https://kovan.optifaucet.com/",
+  maintainer: "Perpetual Protocol",
+  maintainerWebsite: "https://perp.com/",
+};
+
+const faucetArbitrumRinkebyEthParadigm: Faucet = {
+  networkId: "arbitrum-rinkeby",
+  url: "https://faucet.paradigm.xyz/",
+  maintainer: "Paradigm",
+  maintainerWebsite: "https://www.paradigm.xyz/",
+};
+
 export const tokenEther: Token = {
   logoPath: "/logos/ethereum-eth-logo.svg",
   title: "Ether",
@@ -143,11 +170,17 @@ export const tokenEther: Token = {
     faucetKovanEthGitter,
     faucetKovanEthParadigm,
     faucetKovanEthParity,
+    // Optimism Kovan
+    faucetOptimismKovanEthOKF,
+    faucetOptimismKovanEthParadigm,
+    faucetOptimismKovanEthPerpetual,
     // Rinkeby
     faucetRinkebyEthAlchemy,
     faucetRinkebyEthChainlink,
     faucetRinkebyEthGeth,
     faucetRinkebyEthParadigm,
+    // Arbitrum Rinkeby
+    faucetArbitrumRinkebyEthParadigm,
     // Ropsten
     faucetRopstenEthDefiKaren,
     faucetRopstenEthDimensionsNetwork,

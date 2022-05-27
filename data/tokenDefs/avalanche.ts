@@ -8,9 +8,16 @@ const faucetFujiAvalanche: Faucet = {
   maintainerWebsite: "https://www.avax.network/",
 };
 
+const faucetFujiAvalancheParadigm: Faucet = {
+  networkId: "avalanche-fuji",
+  url: "https://faucet.paradigm.xyz/",
+  maintainer: "Paradigm",
+  maintainerWebsite: "https://paradigm.xyz",
+};
+
 export const tokenAvalanche: Token = {
   title: "Avalanche",
   logoPath: "/logos/avalanche-avax-logo.svg",
   symbol: "AVAX",
-  faucets: [faucetFujiAvalanche],
+  faucets: [faucetFujiAvalanche, faucetFujiAvalancheParadigm],
 };
