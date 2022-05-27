@@ -92,6 +92,13 @@ const faucetRinkebyEthParadigm: Faucet = {
   maintainerWebsite: "https://www.paradigm.xyz/",
 };
 
+const faucetRinebyEthShan: Faucet = {
+  networkId: "ethereum-rinkeby",
+  url: "https://www.rinkedry.xyz/",
+  maintainer: "Shan8851",
+  maintainerWebsite: "https://www.shan8851.com/",
+};
+
 const faucetGoerliEthAlchemy: Faucet = {
   networkId: "ethereum-goerli",
   url: "https://goerlifaucet.com/",
@@ -179,6 +186,7 @@ export const tokenEther: Token = {
     faucetRinkebyEthChainlink,
     faucetRinkebyEthGeth,
     faucetRinkebyEthParadigm,
+    faucetRinebyEthShan,
     // Arbitrum Rinkeby
     faucetArbitrumRinkebyEthParadigm,
     // Ropsten
