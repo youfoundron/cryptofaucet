@@ -74,7 +74,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
                   🚰 Faucets by network
                 </span>
                 <span className="flex-inline flex-row space-x-4 mx-auto text-center items-center flex-wrap">
-                  {tokenNetworkIds.map((networkId, i) => {
+                  {tokenNetworkIds.map((networkId) => {
                     const network = networksById[networkId];
                     const checkId = `show-${token.id}-${networkId}`;
                     // const numFaucetsForNetwork = Number(
