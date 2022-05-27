@@ -1,0 +1,1 @@
+{"pageProps":{"network":{"id":"optimism-kovan","name":"Optimistic Kovan","chainId":"optimism","blockExplorer":"https://kovan-optimistic.etherscan.io","networkConfig":{"networkName":"Optimism Kovan (testnet)","newRpcUrl":"https://kovan.optimism.io","chainId":69,"symbol":"oETH","explorer":"https://kovan-optimistic.etherscan.io"}}},"__N_SSG":true}
