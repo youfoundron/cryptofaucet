@@ -1,7 +1,12 @@
 import "../styles/globals.css";
+import PlausibleProvider from "next-plausible";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <PlausibleProvider domain="cryptofaucet.dev">
+      <Component {...pageProps} />
+    </PlausibleProvider>
+  );
 }
 export default MyApp;
