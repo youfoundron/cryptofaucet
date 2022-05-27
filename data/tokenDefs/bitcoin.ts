@@ -35,6 +35,12 @@ const faucetBitaps: Faucet = {
   maintainerWebsite: "https://bitaps.com/",
 };
 
+const faucetTestnet: Faucet = {
+  networkId: "bitcoin-testnet",
+  url: "https://testnet-faucet.com/btc-testnet/",
+  maintainer: "Testnet Faucet",
+};
+
 export const tokenBitcoin: Token = {
   title: "Bitcoin",
   description: "A peer-to-peer electronic cash system",
@@ -45,6 +51,7 @@ export const tokenBitcoin: Token = {
     faucetCoin,
     faucetKuttler,
     faucetMempoolco,
+    faucetTestnet,
     faucetUO1,
   ],
 };
