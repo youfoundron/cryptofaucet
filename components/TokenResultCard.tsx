@@ -66,8 +66,8 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
       }}
     >
       {isShowingFaucets && (
-        <div className="border-t border-gray-200 pt-2 mt-4 prose prose-indigo">
-          <div className="sm:divide-y sm:divide-gray-200">
+        <div className="border-t-2 border-indigo-400 border-dotted pt-2 mt-4 prose prose-indigo">
+          <div className="divide-y-2 divide-indigo-400 divide-dotted">
             {tokenNetworkIds.length > 1 && (
               <div className="pt-2 w-full flex flex-col justify-center items-center space-y-2">
                 <span className="text-sm font-medium text-gray-500">
@@ -114,7 +114,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
               </div>
             )}
             <div className="mt-4 text-sm text-gray-900 space-x-2">
-              <div className="divide-y">
+              <div className="divide-y-2 divide-indigo-400 divide-dotted">
                 {/* {[...selectedNetworkIds].map((networkId: NetworkId) => { */}
                 {[selectedNetworkId].map((networkId: NetworkId) => {
                   const faucets = faucetsByNetwork[networkId] as Faucet[];

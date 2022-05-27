@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
       : allPopulatedTokens;
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gradient-to-bl from-red-400 via-yellow-200 to-purple-400">
       <Head>
         <title>Crypto Faucet</title>
         <meta
@@ -81,7 +81,7 @@ const HomePage: React.FC = () => {
           <form className="w-full max-w-md mx-auto">
             <input
               autoFocus
-              className="w-full border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md"
+              className="w-full bg-white bg-opacity-50 border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md"
               type="text"
               placeholder="Type to search by token, network, or chain..."
               onChange={(e) => setQuery(e.target.value)}
