@@ -21,6 +21,9 @@ export const data = {
       "Celo is a mobile-first platform that makes financial dApps and crypto payments accessible to anyone with a mobile phone.",
     documentationWebsite: "https://docs.celo.org/",
   },
+  dogecoin: {
+    name: "Dogecoin",
+  },
   ethereum: {
     name: "Ethereum",
     description:

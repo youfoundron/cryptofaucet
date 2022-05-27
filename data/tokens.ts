@@ -4,6 +4,7 @@ import { tokenAvalanche } from "./tokenDefs/avalanche";
 import { tokenBitcoin } from "./tokenDefs/bitcoin";
 import { tokenCelo } from "./tokenDefs/celo";
 import { tokenChainlink } from "./tokenDefs/chainlink";
+import { tokenDogecoin } from "./tokenDefs/dogecoin";
 import { tokenEther } from "./tokenDefs/ether";
 import { tokenFilecoin } from "./tokenDefs/filecoin";
 import { tokenFlow } from "./tokenDefs/flow";
@@ -21,6 +22,7 @@ export const data = {
   algo: tokenAlgorand,
   avax: tokenAvalanche,
   celo: tokenCelo,
+  doge: tokenDogecoin,
   link: tokenChainlink,
   fil: tokenFilecoin,
   flow: tokenFlow,

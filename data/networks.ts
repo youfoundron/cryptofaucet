@@ -33,6 +33,11 @@ export const data = {
     description: "Test network for developers building on the Celo platform",
     blockExplorer: "https://alfajores-blockscout.celo-testnet.org",
   },
+  "dogecoin-testnet": {
+    name: "Dogecoin Testnet",
+    chainId: "dogecoin" as ChainId,
+    blockExplorer: "https://blockexplorer.one/dogecoin/testnet",
+  },
   "ethereum-goerli": {
     name: "Görli",
     chainId: "ethereum" as ChainId,
