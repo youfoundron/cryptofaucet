@@ -1,4 +1,4 @@
-import { ChainId } from "../domain/Chain";
+import { Chain, ChainId } from "../domain/Chain";
 import { Network, NetworkId } from "../domain/Network";
 
 export const data = {
@@ -31,6 +31,11 @@ export const data = {
     description:
       "The testnet is an alternative Bitcoin block chain to be used for testing",
     blockExplorer: "https://blockstream.info/testnet",
+  },
+  "cardano-testnet": {
+    name: "Cardano",
+    chainId: "cardano" as ChainId,
+    blockExplorer: "https://testnet.cardanoscan.io/",
   },
   "celo-alfajores": {
     name: "Alfajores",

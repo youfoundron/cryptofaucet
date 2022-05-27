@@ -5,6 +5,9 @@ export const data = {
     name: "Algorand",
     documentationWebsite: "https://developer.algorand.org/docs/",
   },
+  arbitrum: {
+    name: "Arbitrum",
+  },
   avalanche: {
     name: "Avalanche",
     documentationWebsite: "https://docs.avax.chain/",
@@ -14,6 +17,10 @@ export const data = {
     description:
       "Bitcoin is an innovative payment network and a new kind of money.",
     documentationWebsite: "https://developer.bitcoin.org/reference/",
+  },
+  cardano: {
+    name: "Cardano",
+    documentationWebsite: "https://docs.cardano.org/introduction",
   },
   "celo-network": {
     name: "Celo",

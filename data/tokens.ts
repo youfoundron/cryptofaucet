@@ -2,6 +2,7 @@ import { Token, TokenId } from "../domain/Token";
 import { tokenAlgorand } from "./tokenDefs/algorand";
 import { tokenAvalanche } from "./tokenDefs/avalanche";
 import { tokenBitcoin } from "./tokenDefs/bitcoin";
+import { tokenCardano } from "./tokenDefs/cardano";
 import { tokenCelo } from "./tokenDefs/celo";
 import { tokenChainlink } from "./tokenDefs/chainlink";
 import { tokenDai } from "./tokenDefs/dai";
@@ -25,6 +26,7 @@ export const data = {
   btc: tokenBitcoin,
   algo: tokenAlgorand,
   avax: tokenAvalanche,
+  ada: tokenCardano,
   celo: tokenCelo,
   dai: tokenDai,
   doge: tokenDogecoin,
