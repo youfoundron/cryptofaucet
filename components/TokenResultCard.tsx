@@ -81,38 +81,33 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
                     //   faucetsByNetwork[networkId]?.length
                     // );
 
-                    const shouldBreak = (i + 1) % 4 === 0;
-
                     return (
-                      <>
-                        <div
-                          key={networkId}
-                          className="group cursor-pointer inline-flex flex-row items-center justify-center space-x-1"
+                      <div
+                        key={networkId}
+                        className="group cursor-pointer inline-flex flex-row items-center justify-center space-x-1"
+                      >
+                        <input
+                          id={checkId}
+                          name={checkId}
+                          className="cursor-pointer group-hover:underline"
+                          type="radio"
+                          onChange={() => handleNetworkChange(networkId)}
+                          checked={selectedNetworkId === networkId}
+                          // type="checkbox"
+                          // onChange={() => handleNetworkToggle(networkId)}
+                          // checked={selectedNetworkIds.has(networkId)}
+                        />
+                        <label
+                          htmlFor={checkId}
+                          className="cursor-pointer group-hover:underline text-sm active:underline font-semibold"
                         >
-                          <input
-                            id={checkId}
-                            name={checkId}
-                            className="cursor-pointer group-hover:underline"
-                            type="radio"
-                            onChange={() => handleNetworkChange(networkId)}
-                            checked={selectedNetworkId === networkId}
-                            // type="checkbox"
-                            // onChange={() => handleNetworkToggle(networkId)}
-                            // checked={selectedNetworkIds.has(networkId)}
-                          />
-                          <label
-                            htmlFor={checkId}
-                            className="cursor-pointer group-hover:underline text-sm active:underline font-semibold"
-                          >
-                            {network.name}
-                            {/* {" "}
+                          {network.name}
+                          {/* {" "}
                               {numFaucetsForNetwork > 1
                                 ? `(${numFaucetsForNetwork})`
                                 : ""} */}
-                          </label>
-                        </div>
-                        {shouldBreak && <br />}
-                      </>
+                        </label>
+                      </div>
                     );
                   })}
                 </span>
