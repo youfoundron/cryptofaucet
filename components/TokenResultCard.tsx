@@ -3,11 +3,7 @@ import React, { useState } from "react";
 import { NetworkId } from "../domain/Network";
 import { TokenPopulated } from "../domain/Token";
 import { ResultCard } from "./ResultCard";
-import {
-  getFaucetsByNetwork,
-  getTokenNetworkIds,
-  networkHasMultipleTokens,
-} from "../data/reducers";
+import { getFaucetsByNetwork, getTokenNetworkIds } from "../data/reducers";
 import { ExternalLinkIcon } from "@heroicons/react/outline";
 import { Faucet } from "../domain/Faucet";
 import { networksById } from "../data/networks";
@@ -88,7 +84,7 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
                             name={checkId}
                             className="cursor-pointer group-hover:underline"
                             type="checkbox"
-                            onChange={(e) => handleNetworkToggle(networkId)}
+                            onChange={() => handleNetworkToggle(networkId)}
                             checked={selectedNetworkIds.has(networkId)}
                           />
                           <label
@@ -108,9 +104,6 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
                   {[...selectedNetworkIds].map((networkId: NetworkId) => {
                     const faucets = faucetsByNetwork[networkId] as Faucet[];
                     const network = networksById[networkId];
-                    const showNetworkLink = networkHasMultipleTokens(
-                      networkId as NetworkId
-                    );
 
                     return (
                       <div key={networkId} className="ml-0">
@@ -146,11 +139,6 @@ export const TokenResultCard: React.FC<TokenResultCardProps> = ({
                                   )}
                                 </div>
                               </div>
-                              {/* {showNetworkLink && (
-                          <Link href={`/networks/${networkId}`}>
-                            <a className='text-xs'>view all tokens</a>
-                          </Link>
-                        )} */}
                             </span>
                             {network.description && (
                               <p>{network.description}</p>
