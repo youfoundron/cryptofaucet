@@ -9,6 +9,7 @@ import { tokenEther } from "./tokenDefs/ether";
 import { tokenFilecoin } from "./tokenDefs/filecoin";
 import { tokenFlow } from "./tokenDefs/flow";
 import { tokenKadena } from "./tokenDefs/kadena";
+import { tokenLitecoin } from "./tokenDefs/litecoin";
 import { tokenSolana } from "./tokenDefs/solana";
 import { tokenStacks } from "./tokenDefs/stacks";
 import { tokenTezos } from "./tokenDefs/tezos";
@@ -27,6 +28,7 @@ export const data = {
   fil: tokenFilecoin,
   flow: tokenFlow,
   kda: tokenKadena,
+  ltc: tokenLitecoin,
   sol: tokenSolana,
   stx: tokenStacks,
   xtz: tokenTezos,

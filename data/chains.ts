@@ -42,6 +42,9 @@ export const data = {
     name: "Kadena",
     documentationWebsite: "https://docs.kadena.io/",
   },
+  litecoin: {
+    name: "Litecoin",
+  },
   solana: {
     name: "Solana",
     documentationWebsite: "https://docs.solana.com",

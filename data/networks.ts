@@ -89,6 +89,11 @@ export const data = {
     chainId: "kadena" as ChainId,
     blockExplorer: "https://explorer.chainweb.com/testnet",
   },
+  "litecoin-testnet": {
+    name: "Litecoin Testnet",
+    chainId: "litecoin" as ChainId,
+    blockExplorer: "https://blockexplorer.one/litecoin/testnet",
+  },
   "solana-testnet": {
     name: "Solana Testnet",
     chainId: "solana" as ChainId,
